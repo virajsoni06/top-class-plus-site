@@ -23,7 +23,9 @@ module.exports = {
 			}
 		},
 		maxWidth: {
-			wrap: "1110px"
+			wrap: "1110px",
+			features: "925px",
+			featureCard: "255px"
 		},
 		screens: {
 			"a-vp": "320px",
