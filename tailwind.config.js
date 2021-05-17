@@ -1,6 +1,10 @@
 module.exports = {
 	theme: {
 		extend: {
+			fontFamily: {
+				merri: ["Merriweather"],
+				sourceSans: ["Source Sans Pro"]
+			},
 			colors: {
 				skyBlue: "#E0F9F9",
 				turquoise: "#39CCCC",
@@ -16,18 +20,18 @@ module.exports = {
 					800: "#003072",
 					900: "#00204C"
 				}
-			},
-			screens: {
-				"a-vp": "320px",
-				"b-vp": "480px",
-				"c-vp": "600px",
-				"d-vp": "768px",
-				"e-vp": "992px",
-				"f-vp": "1200px"
 			}
 		},
 		maxWidth: {
 			wrap: "1110px"
+		},
+		screens: {
+			"a-vp": "320px",
+			"b-vp": "480px",
+			"c-vp": "600px",
+			"d-vp": "768px",
+			"e-vp": "992px",
+			"f-vp": "1200px"
 		}
 	},
 	variants: {},

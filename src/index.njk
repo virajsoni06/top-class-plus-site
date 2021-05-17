@@ -5,20 +5,25 @@ title: Minimal boilerplate for new projects built with Eleventy, Tailwind and Po
 
 <main id="main">
 
-    <div class="bg-skyBlue pt-6">
-        <div class="max-w-wrap mx-auto">
-            <div>
-                <div class="flex justify-between items-center">
-                    <img src="/static/Logo.png" alt="App logo" width="230px">
-                    <div class="menu flex items-center ">
-                        <a href="#" class="mr-8 no-underline text-black">Help</a>
-                        <a href="#" class="mr-8 no-underline text-black">About</a>
-                        <button class="mr-8 pt-2 pb-2 pl-5 pr-5 bg-turquoise text-white rounded">
-                            Subscribe
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="bg-skyBlue pt-6">
+
+		{# app wrapper #}
+		<div class="max-w-wrap mx-auto">
+
+			{# top nav #}
+			{% include "top-nav.njk" %}
+			{# top nav #}
+
+			{# banner section #}
+			{% include "banner.njk" %}
+			{# banner section #}
+
+			{# features section #}
+			{% include "features.njk" %}
+			{# features section #}
+
+		</div>
+		{# app wrapper #}
+
+	</div>
 </main>
