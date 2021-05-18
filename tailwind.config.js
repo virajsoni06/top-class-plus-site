@@ -8,28 +8,28 @@ module.exports = {
 			colors: {
 				skyBlue: "#E0F9F9",
 				turquoise: "#39CCCC",
-				lightCyan: "#EDFFFD",
-				"ws-blue": {
-					100: "#E6F0FF",
-					200: "#BFDAFF",
-					300: "#99C3FF",
-					400: "#4D97FE",
-					500: "#006AFE",
-					600: "#005FE5",
-					700: "#004098",
-					800: "#003072",
-					900: "#00204C"
-				}
+				lightCyan: "#EDFFFD"
 			},
 			width: {
 				subscribe: "540px"
+			},
+			fontSize: {
+				"ty-h1": "58px",
+				"ty-h2": "45px",
+				"ty-h4": "28px",
+				"ty-h5": "22px",
+				"ty-h6": "18px",
+				"ty-p": "18px",
+				"ty-ps": "14px"
 			}
 		},
+
 		maxWidth: {
 			wrap: "1110px",
 			features: "925px",
 			featureCard: "255px"
 		},
+
 		screens: {
 			"a-vp": "320px",
 			"b-vp": "480px",

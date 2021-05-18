@@ -9,7 +9,7 @@ button:focus {
 }
 
 a {
-	@apply text-ws-blue-500 underline;
+	/* @apply text-ws-blue-500 underline; */
 }
 
 .rocket {
