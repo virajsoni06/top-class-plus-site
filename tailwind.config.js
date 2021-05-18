@@ -12,7 +12,7 @@ module.exports = {
 				"black-2": "#514950"
 			},
 			width: {
-				subscribe: "540px"
+				card: "540px"
 			},
 			fontSize: {
 				"ty-h1": "58px",

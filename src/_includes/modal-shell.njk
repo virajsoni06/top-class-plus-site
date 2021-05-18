@@ -1,0 +1,14 @@
+<div class="pt-3"></div>
+<div class="pt-3 px-5 pb-5 bg-lightCyan rounded-md relative a-vp:w-11/12 c-vp:w-card mx-auto">
+
+    <h4 class="text-ty-h4 font-merri font-bold mb-5">
+        {% block header %}{% endblock %}
+    </h4>
+
+    <img src="/static/close.png" alt="close" class="absolute close-modal cursor-pointer" width="20px"/>
+
+    <section class="form-section">
+        {% block content %}{% endblock %}
+    </section>
+
+</div>
