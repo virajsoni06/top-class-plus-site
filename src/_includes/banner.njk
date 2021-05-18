@@ -1,3 +1,5 @@
+{% import "macros/button.njk" as button %}
+
 <div class="flex mb-24 a-vp:flex-col-reverse a-vp:px-3 items-center c-vp:flex-row c-vp:justify-between">
 
     <div class="max-w-md a-vp:w-full a-vp:text-center c-vp:w-5/12 c-vp:text-left">
@@ -12,6 +14,8 @@
         <button class="mb-5 py-2 px-5 text-white font-merri text-ty-h5 bg-turquoise rounded border-2 border-transparent hover:border-turquoise hover:bg-transparent hover:text-turquoise transition-all duration-300">
             Get Worksheets
         </button>
+
+        {# {{ button.primaryButton("Get Worksheets") }} #}
 
         <div class="flex items-center a-vp:justify-center c-vp:justify-start">
 

@@ -5,11 +5,11 @@
 
 @layer utilities {
 	.position-middle {
-		top : -20px;
-		left : 44%;
+		top: -20px;
+		left: 44%;
 	}
 	.close-modal {
 		right: 10px;
 		top: 10px;
 	}
-  }
+}

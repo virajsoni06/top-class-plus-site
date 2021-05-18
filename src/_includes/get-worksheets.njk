@@ -1,3 +1,5 @@
+{% import "macros/button.njk" as button %}
+
 <div class="get-worksheets a-vp:px-3 e-vp:px-0">
 
 	<h1 class="font-merri text-ty-h1 font-bold text-center mb-4">
@@ -14,9 +16,7 @@
 
 	<div class="flex justify-center mb-1">
 
-		<button class="py-2 px-5 text-white text-ty-h5 font-merri bg-turquoise rounded border-2 border-transparent hover:border-turquoise hover:bg-transparent hover:text-turquoise transition-all duration-300">
-			Get Worksheets
-		</button>
+		{{ button.primaryButton("Get Worksheets") }}
 
 	</div>
 
