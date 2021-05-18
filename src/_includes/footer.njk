@@ -1,0 +1,17 @@
+<div>
+
+    <div class="flex justify-between items-center py-3">
+        <p class="text-sm font-sourceSans font-semibold">© 2020 ALL RIGHTS RESERVED | Top Class Plus</p>
+        <div class="flex">
+            {% for item in card.cards %}
+
+                <img src={{ item.source }} alt={{ item.alt }} width="40px" class="ml-2" />
+
+			{% else %}
+
+			{% endfor %}
+        </div>
+    </div>
+   
+
+</div>

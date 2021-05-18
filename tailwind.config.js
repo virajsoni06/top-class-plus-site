@@ -20,6 +20,9 @@ module.exports = {
 					800: "#003072",
 					900: "#00204C"
 				}
+			},
+			width: {
+				subscribe: "540px"
 			}
 		},
 		maxWidth: {
