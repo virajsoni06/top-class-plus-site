@@ -9,7 +9,8 @@ module.exports = {
 				skyBlue: "#E0F9F9",
 				turquoise: "#39CCCC",
 				lightCyan: "#EDFFFD",
-				"black-2": "#514950"
+				"black-2": "#514950",
+				"black-60": "rgba(0, 0, 0, 0.6)"
 			},
 			width: {
 				card: "540px"

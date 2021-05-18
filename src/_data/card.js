@@ -1,24 +1,24 @@
 module.exports = {
 	cards: [
 		{
-			source: "/static/visa.png",
+			source: "/static/images/visa.png",
 			alt: "Visa"
 		},
 		{
-			source: "/static/amex.png",
+			source: "/static/images/amex.png",
 			alt: "American Express"
 		},
 		{
-			source: "/static/mastercard.png",
+			source: "/static/images/mastercard.png",
 			alt: "Mastercard"
 		},
 		{
-			source: "/static/jcb.png",
+			source: "/static/images/jcb.png",
 			alt:
 				"JCB"
 		},
 		{
-			source: "/static/discover.png",
+			source: "/static/images/discover.png",
 			alt: "Discover"
 		}
 	]
