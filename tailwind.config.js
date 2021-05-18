@@ -8,7 +8,8 @@ module.exports = {
 			colors: {
 				skyBlue: "#E0F9F9",
 				turquoise: "#39CCCC",
-				lightCyan: "#EDFFFD"
+				lightCyan: "#EDFFFD",
+				"black-2": "#514950"
 			},
 			width: {
 				subscribe: "540px"

@@ -2,3 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+	.position-middle {
+		top : -20px;
+		left : 44%;
+	}
+  }
