@@ -24,13 +24,11 @@ module.exports = {
 				"ty-ps": "14px"
 			}
 		},
-
 		maxWidth: {
 			wrap: "1110px",
 			features: "925px",
 			featureCard: "255px"
 		},
-
 		screens: {
 			"a-vp": "320px",
 			"b-vp": "480px",
