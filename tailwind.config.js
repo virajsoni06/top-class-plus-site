@@ -37,6 +37,11 @@ module.exports = {
 			"d-vp": "768px",
 			"e-vp": "992px",
 			"f-vp": "1200px"
+		},
+		borderWidth: {
+			tiny: "0.15px",
+			"1": "1px",
+			"2": "2px"
 		}
 	},
 	variants: {},

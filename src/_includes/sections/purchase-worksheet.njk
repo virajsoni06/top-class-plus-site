@@ -13,18 +13,18 @@
 			{# country selection #}
 			<div class="flex items-center mb-8">
 
-				<div class="mr-24">
-					<input type="radio" id="usa" name="country" value="USA" class="cursor-pointer">
+				<div class="a-vp:mr-8 c-vp:mr-24 flex items-center">
+					<input type="radio" id="usa" name="country" value="USA" class="cursor-pointer mr-2">
 					<label for="usa" class="cursor-pointer font-sourceSans text-ty-p">U.S.A</label><br>
 				</div>
 
-				<div class="mr-24">
-					<input type="radio" id="uk" name="country" value="UK" class="cursor-pointer">
+				<div class="a-vp:mr-8 c-vp:mr-24 flex items-center">
+					<input type="radio" id="uk" name="country" value="UK" class="cursor-pointer mr-2">
 					<label for="uk" class="cursor-pointer font-sourceSans text-ty-p">U.K</label><br>
 				</div>
 
-				<div class="mr-24">
-					<input type="radio" id="india" name="country" value="India" class="cursor-pointer">
+				<div class="flex items-center">
+					<input type="radio" id="india" name="country" value="India" class="cursor-pointer mr-2">
 					<label for="india" class="cursor-pointer font-sourceSans text-ty-p">India</label><br>
 				</div>
 
@@ -38,11 +38,11 @@
 
 				{% for item in worksheet.worksheets %}
 
-					<div class="flex items-center justify-between bg-white rounded border-2 border-black px-5 py-1 mb-2">
+					<div class="flex items-center justify-between bg-white rounded border-tiny border-black px-5 py-1 mb-2">
 
 						<div class="flex items-center">
 
-							<input type="checkbox" name="worksheets" value={{ item.name }} id={{ item.id }} class="cursor-pointer mr-6 border-2 border-black">
+							<input type="checkbox" name="worksheets" value={{ item.name }} id={{ item.id }}  class="cursor-pointer mr-6 border-2 border-black">
 
 							<label for={{ item.id }}>
 
