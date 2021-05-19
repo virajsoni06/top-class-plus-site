@@ -1,3 +1,5 @@
+{% import "macros/button.njk" as button %}
+
 <div class="flex justify-between items-center mb-24 a-vp:px-3 a-vp:flex-col b-vp:flex-row e-vp:px-0">
 
 	<img src="/static/images/Logo.png" alt="App logo" width="230px" >
@@ -8,9 +10,7 @@
 
 		<a href="#" class="mr-8 no-underline text-black a-vp:hidden d-vp:block">About</a>
 
-		<button class="a-vp:mr-3 c-vp:mr-8 py-2 px-5 font-merri text-white bg-turquoise rounded-small border-2 border-transparent hover:border-turquoise hover:bg-transparent hover:text-turquoise transition-all duration-300">
-            Subscribe
-    	</button>
+		{{ button.primaryButton("Subscribe", "a-vp:mr-3 c-vp:mr-8") }}
 
 		<select class="py-2 px-4 bg-transparent text-turquoise rounded-small border-2 border-turquoise">
 			<option selected>
