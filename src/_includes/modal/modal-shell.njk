@@ -6,9 +6,9 @@
             {% block header %}{% endblock %}
         </h4>
 
-        <img src="/static/images/close.png" alt="close" class="absolute close-modal cursor-pointer" width="20px"/>
+        {% block close %}{% endblock %}
 
-        <section class="form-section">
+        <section class="content-section">
             {% block content %}{% endblock %}
         </section>
 
