@@ -23,6 +23,10 @@ module.exports = {
 				"ty-h6": "18px",
 				"ty-p": "18px",
 				"ty-ps": "14px"
+			},
+			borderRadius: {
+				small: "5px",
+				large: "10px"
 			}
 		},
 		maxWidth: {
