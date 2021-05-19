@@ -4,12 +4,13 @@
     Purchase Worksheets
   </h2>
 
-	<div class="flex items-center justify-between">
+	<div class="flex a-vp:flex-col-reverse d-vp:flex-row items-center justify-between a-vp:px-3 e-vp:px-0">
 
-		<div class="px-10 pb-10 pt-5 bg-skyBlue rounded">
+		<div class="px-10 pb-10 pt-5 bg-skyBlue rounded a-vp:w-full e-vp:w-5/12 d-vp:w-7/12">
 
 			<p class="font-sourceSans font-semibold text-ty-p mb-3">Select Country</p>
 
+			{# country selection #}
 			<div class="flex items-center mb-8">
 
 				<div class="mr-24">
@@ -28,21 +29,57 @@
 				</div>
 
 			</div>
+			{# country selection #}
 
 			<p class="font-sourceSans font-semibold text-ty-p mb-4">Worksheets to purchase</p>
 
+			{# worksheet selection #}
+			<div class="mb-8">
+
+				{% for item in worksheet.worksheets %}
+
+					<div class="flex items-center justify-between bg-white rounded border-2 border-black px-5 py-1 mb-2">
+
+						<div class="flex items-center">
+
+							<input type="checkbox" name="worksheets" value={{ item.name }} id={{ item.id }} class="cursor-pointer mr-6 border-2 border-black">
+
+							<label for={{ item.id }}>
+
+								<div class="cursor-pointer">
+
+									<p class="font-sourceSans text-ty-ps font-semibold">{{ item.name }}</p>
+
+									<p class="font-sourceSans text-xs">{{ item.ageGroup }}</p>
+
+								</div>
+							</label>
+
+						</div>
+
+						<img src="/static/images/info.png" alt="info" width="24px" class="cursor-pointer"/>
+
+					</div>
+
+				{% endfor %}
+
+			</div>
+			{# worksheet selection #}
+
 			<div class="mb-3">
+
 				<button class="py-2 px-5 bg-turquoise text-white text-ty-p font-bold rounded font-merri a-vp:w-full border-2 border-transparent hover:border-turquoise hover:bg-transparent hover:text-turquoise transition-all duration-300">
       		Purchase
     		</button>
+
 			</div>
 
-			<p class="font-sourceSans font-semibold text-ty-ps">Not Ready to Purchase? <a href="" class="text-blue-500">Get samples</a> of our worksheets</p>
+			<p class="font-sourceSans font-semibold text-ty-ps text-center">Not Ready to Purchase? <a href="" class="text-blue-500">Get samples</a> of our worksheets</p>
 
 		</div>
 
-		<div class="w-1/2 flex justify-center items-center">
-			<img src="/static/images/undraw_booking.png" alt="Undraw booking" width="80%"/>
+		<div class="a-vp:mb-6 d-vp:mb-0 flex justify-center items-center d-vp:w-1/2">
+			<img src="/static/images/undraw_booking.png" alt="Undraw booking" width="90%"/>
 		</div>
 
 	</div>
