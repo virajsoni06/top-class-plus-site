@@ -13,7 +13,9 @@ module.exports = {
 				"black-60": "rgba(0, 0, 0, 0.6)"
 			},
 			width: {
-				card: "540px"
+				card: "540px",
+				dropdown: "230px",
+				info: "180px"
 			},
 			fontSize: {
 				"ty-h1": "58px",

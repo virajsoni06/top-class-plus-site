@@ -1,7 +1,8 @@
-// console.log(`I was loaded at ${Date(Date.now()).toString()}`);
-
 const currency = document.querySelectorAll(".currency");
+const changeCountry = document.querySelector(".change");
+const dropdown = document.querySelector(".dropdown");
 
+// fetching geo location in order to display currency
 fetch("https://extreme-ip-lookup.com/json/")
 	.then(res => res.json())
 	.then(response => {
@@ -9,15 +10,29 @@ fetch("https://extreme-ip-lookup.com/json/")
 			currency.forEach(function(item) {
 				item.innerHTML = "₹";
 			});
-		} else if (response.country === "USA") {
-			currency.innerHTML = "K";
-		} else if (response.country === "UK") {
-			currency.innerHTML = "L";
+		} else if (response.country === "United States") {
+			currency.forEach(function(item) {
+				item.innerHTML = "$";
+			});
+		} else if (response.country === "United Kingdom") {
+			currency.forEach(function(item) {
+				item.innerHTML = "£";
+			});
 		} else {
-			currency.innerHTML = "K";
+			currency.forEach(function(item) {
+				item.innerHTML = "$";
+			});
 		}
-		console.log("Country: ", response);
 	})
 	.catch((data, status) => {
-		console.log("Request failed");
+		currency.forEach(function(item) {
+			item.innerHTML = "$";
+		});
 	});
+
+// toggle country dropdown
+changeCountry?.addEventListener("click", function() {
+	if (!dropdown?.classList.contains("show")) {
+		dropdown.classList.add("show");
+	}
+});

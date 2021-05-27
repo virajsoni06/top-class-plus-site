@@ -1,3 +1,5 @@
+{% import "macros/button.njk" as button %}
+
 <div class="mb-32">
 
 	<h2 class="text-center text-ty-h2 font-merri font-bold mb-8">
@@ -8,25 +10,34 @@
 
 		<div class="px-10 pb-10 pt-5 bg-lightCyan rounded-large a-vp:w-full e-vp:w-5/12 d-vp:w-7/12">
 
-			<p class="font-sourceSans font-semibold text-ty-p mb-3">Select Country</p>
-
 			{# country selection #}
 			<div class="flex items-center mb-8">
 
-				<div class="a-vp:mr-8 c-vp:mr-24 flex items-center">
-					<input type="radio" id="usa" name="country" value="USA" class="cursor-pointer mr-2">
-					<label for="usa" class="cursor-pointer font-sourceSans text-ty-p">U.S.A</label><br>
+				<p class="font-sourceSans font-semibold text-ty-p mr-6">Select Country: </p>
+
+				<div class="relative">
+					<h6 class="mr-5 font-merri font-bold text-ty-h6">United States</h6>
+
+					<div class="dropdown absolute bg-skyBlue rounded-small p-3 w-dropdown whitespace-nowrap z-50">
+
+						<div class="flex mb-2 cursor-pointer">
+							<img src="/static/images/us-flag.png"  alt="flag" width="20px" class="mr-2"/>
+							<h6 class="mr-5 font-merri font-bold text-ty-h6">United States</h6>
+						</div>
+						<div class="flex mb-2 cursor-pointer">
+							<img src="/static/images/gb-flag.png" alt="flag" width="20px" class="mr-2"/>
+							<h6 class="mr-5 font-merri font-bold text-ty-h6">Great Britain</h6>
+						</div>
+						<div class="flex cursor-pointer">
+							<img src="/static/images/in-flag.png" alt="flag" width="20px" class="mr-2"/>
+							<h6 class="mr-5 font-merri font-bold text-ty-h6">India</h6>
+						</div>
+
+					</div>
+
 				</div>
 
-				<div class="a-vp:mr-8 c-vp:mr-24 flex items-center">
-					<input type="radio" id="uk" name="country" value="UK" class="cursor-pointer mr-2">
-					<label for="uk" class="cursor-pointer font-sourceSans text-ty-p">U.K</label><br>
-				</div>
-
-				<div class="flex items-center">
-					<input type="radio" id="india" name="country" value="India" class="cursor-pointer mr-2">
-					<label for="india" class="cursor-pointer font-sourceSans text-ty-p">India</label><br>
-				</div>
+				<p class="font-sourceSans text-ty-ps text-turquoise cursor-pointer change">Change</p>
 
 			</div>
 			{# country selection #}
@@ -57,7 +68,15 @@
 
 						</div>
 
-						<img src="/static/images/info.png" alt="info" width="24px" class="cursor-pointer"/>
+						<div class="hover-trigger relative">
+
+							<img src="/static/images/info.png" alt="info" width="24px" class="cursor-pointer"/>
+
+							{# info-card #}
+							{% include "sections/info-card.njk" %}
+							{# info-card #}
+
+						</div>
 
 					</div>
 
@@ -68,9 +87,11 @@
 
 			<div class="mb-3">
 
-				<button class="py-2 px-5 bg-turquoise text-white text-ty-p font-bold rounded-small font-merri a-vp:w-full border-2 border-transparent hover:border-turquoise hover:bg-transparent hover:text-turquoise transition-all duration-300">
-      				Purchase
-    			</button>
+				<button class="mb-3 py-2 px-5 bg-turquoise text-white text-ty-p font-bold rounded-small font-merri a-vp:w-full border-2 border-transparent hover:border-turquoise hover:bg-transparent hover:text-turquoise transition-all duration-300">
+      		Purchase
+    		</button>
+
+				{{ button.secondaryButton("Get samples of worksheets", "text-ty-h5 w-full") }}
 
 			</div>
 
@@ -85,3 +106,18 @@
 	</div>
 
 </div>
+
+{# <div class="a-vp:mr-8 c-vp:mr-24 flex items-center">
+	<input type="radio" id="usa" name="country" value="USA" class="cursor-pointer mr-2">
+	<label for="usa" class="cursor-pointer font-sourceSans text-ty-p">U.S.A</label><br>
+	</div>
+
+	<div class="a-vp:mr-8 c-vp:mr-24 flex items-center">
+	<input type="radio" id="uk" name="country" value="UK" class="cursor-pointer mr-2">
+	<label for="uk" class="cursor-pointer font-sourceSans text-ty-p">U.K</label><br>
+	</div>
+
+	<div class="flex items-center">
+	<input type="radio" id="india" name="country" value="India" class="cursor-pointer mr-2">
+	<label for="india" class="cursor-pointer font-sourceSans text-ty-p">India</label><br>
+</div> #}

@@ -12,4 +12,18 @@
 		right: 10px;
 		top: 10px;
 	}
+	.dropdown {
+		top: -10px;
+		display: none;
+	}
+	.dropdown.show {
+		display: block;
+	}
+	.hover-trigger .hover-target {
+		display: none;
+	}
+	.hover-trigger:hover .hover-target {
+		display: block;
+		left: 45px;
+	}
 }
