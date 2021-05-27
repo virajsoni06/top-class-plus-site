@@ -19,6 +19,9 @@
 	.dropdown.show {
 		@apply block;
 	}
+	.modal-shell.show {
+		@apply block;
+	}
 	.worksheet-item.selected {
 		@apply border-turquoise bg-skyBlue;
 	}

@@ -5,6 +5,10 @@ const worksheetItem = document.querySelectorAll(".worksheet-item");
 const checkbox = document.querySelectorAll(".checkbox-img");
 const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
+const getSamplesButton = document.querySelector(".get-samples");
+const closeModal = document.querySelector(".close-modal");
+const closeButton = document.querySelector(".close-btn");
+const modalShell = document.querySelector(".modal-shell");
 
 // fetching user geo location in order to display currency symbol
 fetch("https://extreme-ip-lookup.com/json/")
@@ -69,4 +73,24 @@ optionCountry?.forEach(function(country) {
 		selectedCountry.innerHTML = selectedContent;
 		dropdown?.classList.remove("show");
 	});
+});
+
+// opening samples modal
+getSamplesButton?.addEventListener("click", function() {
+	if (!modalShell?.classList.contains("show")) {
+		modalShell?.classList.add("show");
+	}
+});
+
+// closing the modal on click close button
+closeModal?.addEventListener("click", function() {
+	if (modalShell?.classList.contains("show")) {
+		modalShell?.classList.remove("show");
+	}
+});
+
+closeButton?.addEventListener("click", function() {
+	if (modalShell?.classList.contains("show")) {
+		modalShell?.classList.remove("show");
+	}
 });
