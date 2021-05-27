@@ -6,7 +6,7 @@ const checkbox = document.querySelectorAll(".checkbox-img");
 const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
 
-// fetching geo location in order to display currency
+// fetching user geo location in order to display currency symbol
 fetch("https://extreme-ip-lookup.com/json/")
 	.then(res => res.json())
 	.then(response => {
@@ -42,7 +42,7 @@ changeCountry?.addEventListener("click", function() {
 });
 
 // setting selected styles for worksheet item
-worksheetItem.forEach(function(item) {
+worksheetItem?.forEach(function(item) {
 	item.addEventListener("click", function() {
 		if (!item?.classList.contains("selected")) {
 			item.classList.add("selected");
@@ -63,7 +63,7 @@ worksheetItem.forEach(function(item) {
 });
 
 // setting selected country
-optionCountry.forEach(function(country) {
+optionCountry?.forEach(function(country) {
 	country?.addEventListener("click", function() {
 		let selectedContent = country.innerHTML;
 		selectedCountry.innerHTML = selectedContent;

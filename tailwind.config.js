@@ -47,7 +47,8 @@ module.exports = {
 		borderWidth: {
 			tiny: "0.15px",
 			"1": "1px",
-			"2": "2px"
+			"2": "2px",
+			"15": "15px"
 		}
 	},
 	variants: {},
