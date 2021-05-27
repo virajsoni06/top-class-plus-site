@@ -5,10 +5,17 @@ const worksheetItem = document.querySelectorAll(".worksheet-item");
 const checkbox = document.querySelectorAll(".checkbox-img");
 const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
+
 const getSamplesButton = document.querySelector(".get-samples");
-const closeModal = document.querySelector(".close-modal");
+const purchaseButton = document.querySelector(".purchase");
 const closeButton = document.querySelector(".close-btn");
-const modalShell = document.querySelector(".modal-shell");
+
+const commonModal = document.querySelectorAll(".modal");
+const closeModal = document.querySelectorAll(".close-modal");
+const sampleModal = document.querySelector(".sample-modal");
+const purchaseModal = document.querySelector(".purchase-modal");
+const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
+const orderCompleteModal = document.querySelector(".order-complete-modal");
 
 // fetching user geo location in order to display currency symbol
 fetch("https://extreme-ip-lookup.com/json/")
@@ -77,20 +84,30 @@ optionCountry?.forEach(function(country) {
 
 // opening samples modal
 getSamplesButton?.addEventListener("click", function() {
-	if (!modalShell?.classList.contains("show")) {
-		modalShell?.classList.add("show");
+	if (!sampleModal?.classList.contains("show")) {
+		sampleModal?.classList.add("show");
+	}
+});
+
+// opening purchase modal
+purchaseButton?.addEventListener("click", function() {
+	if (!purchaseModal?.classList.contains("show")) {
+		purchaseModal?.classList.add("show");
 	}
 });
 
 // closing the modal on click close button
-closeModal?.addEventListener("click", function() {
-	if (modalShell?.classList.contains("show")) {
-		modalShell?.classList.remove("show");
-	}
+closeModal?.forEach(function(item) {
+	item.addEventListener("click", function() {
+		commonModal.forEach(function(modal) {
+			if (modal?.classList.contains("show")) modal.classList.remove("show");
+		});
+	});
 });
 
+// common function to close all modal variants
 closeButton?.addEventListener("click", function() {
-	if (modalShell?.classList.contains("show")) {
-		modalShell?.classList.remove("show");
+	if (commonModal?.classList.contains("show")) {
+		commonModal?.classList.remove("show");
 	}
 });

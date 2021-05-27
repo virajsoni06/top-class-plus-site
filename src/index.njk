@@ -63,8 +63,22 @@ title: Minimal boilerplate for new projects built with Eleventy, Tailwind and Po
 
 	</div>
 
-	{# sample modal #}
-	{% include "modal/worksheet-info-modal.njk" %}
-	{# sample modal #}
+	{# modals #}
+	<div class="sample-modal modal">
+		{% include "modal/sample-modal.njk" %}
+	</div>
+
+	<div class="worksheet-info-modal modal">
+		{% include "modal/worksheet-info-modal.njk" %}
+	</div>
+
+	<div class="order-complete-modal modal">
+		{% include "modal/order-complete-modal.njk" %}
+	</div>
+
+	<div class="purchase-modal modal">
+		{% include "modal/purchase-modal.njk" %}
+	</div>
+	{# modals #}
 
 </main>

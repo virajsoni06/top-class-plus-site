@@ -19,7 +19,10 @@
 	.dropdown.show {
 		@apply block;
 	}
-	.modal-shell.show {
+	.modal {
+		@apply hidden;
+	}
+	.modal.show {
 		@apply block;
 	}
 	.worksheet-item.selected {
