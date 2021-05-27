@@ -3,6 +3,8 @@ const changeCountry = document.querySelector(".change");
 const dropdown = document.querySelector(".dropdown");
 const worksheetItem = document.querySelectorAll(".worksheet-item");
 const checkbox = document.querySelectorAll(".checkbox-img");
+const selectedCountry = document.querySelector(".country-selected");
+const optionCountry = document.querySelectorAll(".country-option");
 
 // fetching geo location in order to display currency
 fetch("https://extreme-ip-lookup.com/json/")
@@ -39,7 +41,7 @@ changeCountry?.addEventListener("click", function() {
 	}
 });
 
-// setting selected styles
+// setting selected styles for worksheet item
 worksheetItem.forEach(function(item) {
 	item.addEventListener("click", function() {
 		if (!item?.classList.contains("selected")) {
@@ -57,5 +59,14 @@ worksheetItem.forEach(function(item) {
 				}
 			});
 		}
+	});
+});
+
+// setting selected country
+optionCountry.forEach(function(country) {
+	country?.addEventListener("click", function() {
+		let selectedContent = country.innerHTML;
+		selectedCountry.innerHTML = selectedContent;
+		dropdown?.classList.remove("show");
 	});
 });
