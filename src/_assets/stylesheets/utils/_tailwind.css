@@ -19,6 +19,10 @@
 	.dropdown.show {
 		display: block;
 	}
+	.worksheet-item.selected {
+		border-color: #39cccc;
+		background-color: #e0f9f9;
+	}
 	.hover-trigger .hover-target {
 		display: none;
 	}
