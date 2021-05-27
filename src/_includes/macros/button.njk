@@ -4,9 +4,9 @@
     </button>
 {% endmacro %}
 
-{% macro secondaryButton(buttonText = "", type = "button") %}
+{% macro secondaryButton(buttonText = "", class = "", type = "button") %}
     <button type={{ type }} 
-        class="py-2 px-5 text-ty-p bg-transparent text-turquoise rounded-small border-2 border-turquoise font-merri font-bold a-vp:mt-2 b-vp:mt-0 hover:bg-turquoise hover:border-transparent hover:text-white transition-all duration-300">
+        class="{{ class }} py-2 px-5 text-ty-p bg-transparent text-turquoise rounded-small border-2 border-turquoise font-merri font-bold a-vp:mt-2 b-vp:mt-0 hover:bg-turquoise hover:border-transparent hover:text-white transition-all duration-300">
         {{ buttonText }}
     </button>
 {% endmacro %}
