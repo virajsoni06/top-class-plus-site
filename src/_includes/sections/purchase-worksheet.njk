@@ -51,22 +51,24 @@
 
 				{% for item in worksheet.worksheets %}
 
-					<div class="worksheet-item flex items-center justify-between bg-white rounded-small border-tiny border-black px-5 py-1 mb-2">
+					<div class="worksheet-item flex items-center justify-between bg-white rounded-small border-tiny border-black px-5 py-1 mb-2 cursor-pointer">
 
 						<div class="flex items-center">
 
-							<input type="checkbox" name="worksheets" value={{ item.name }} id={{ item.id }}  class="cursor-pointer mr-6 border-2 border-black">
+							{# <input type="checkbox" name="worksheets" value={{ item.name }} id={{ item.id }}  class="cursor-pointer mr-6 border-2 border-black"> #}
 
-							<label for={{ item.id }}>
+							<img src="/static/images/outline.png" alt="checkbox" width="18px" class="checkbox-img mr-6 select-none"/>
 
-								<div class="cursor-pointer">
+							{# <label for={{ item.id }}> #}
 
-									<p class="font-sourceSans text-ty-ps font-semibold">{{ item.name }}</p>
+							<div class="select-none">
 
-									<p class="font-sourceSans text-xs">{{ item.ageGroup }}</p>
+								<p class="font-sourceSans text-ty-ps font-semibold">{{ item.name }}</p>
 
-								</div>
-							</label>
+								<p class="font-sourceSans text-xs">{{ item.ageGroup }}</p>
+
+							</div>
+							{# </label> #}
 
 						</div>
 

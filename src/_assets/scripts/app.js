@@ -2,6 +2,7 @@ const currency = document.querySelectorAll(".currency");
 const changeCountry = document.querySelector(".change");
 const dropdown = document.querySelector(".dropdown");
 const worksheetItem = document.querySelectorAll(".worksheet-item");
+const checkbox = document.querySelectorAll(".checkbox-img");
 
 // fetching geo location in order to display currency
 fetch("https://extreme-ip-lookup.com/json/")
@@ -39,13 +40,22 @@ changeCountry?.addEventListener("click", function() {
 });
 
 // setting selected styles
-// worksheetItem?.addEventListener("click", function() {
 worksheetItem.forEach(function(item) {
 	item.addEventListener("click", function() {
 		if (!item?.classList.contains("selected")) {
 			item.classList.add("selected");
+			checkbox.forEach(function(check) {
+				if (item?.contains(check)) {
+					check.src = "/static/images/checked.png";
+				}
+			});
 		} else {
 			item.classList.remove("selected");
+			checkbox.forEach(function(check) {
+				if (item?.contains(check)) {
+					check.src = "/static/images/outline.png";
+				}
+			});
 		}
 	});
 });
