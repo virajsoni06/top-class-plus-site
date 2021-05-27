@@ -1,0 +1,29 @@
+<div class="worksheet-item flex items-center justify-between bg-white rounded-small border-tiny border-black px-5 py-1 mb-2 cursor-pointer">
+
+    <div class="flex items-center">
+
+        <img src="/static/images/outline.png" alt="checkbox" width="18px" class="checkbox-img mr-6 select-none"/>
+
+        <div class="select-none">
+
+            <p class="font-sourceSans text-ty-ps font-semibold">{{ item.name }}</p>
+
+            <p class="font-sourceSans text-xs">{{ item.ageGroup }}</p>
+
+        </div>
+
+    </div>
+
+    <div class="hover-trigger relative">
+
+        <img src="/static/images/info.png" alt="info" width="24px" class="cursor-pointer"/>
+
+        {# info-card #}
+        {% include "sections/info-card.njk" %}
+        {# info-card #}
+
+        <div class="absolute tooltip"></div>
+
+    </div>
+
+</div>
