@@ -1,16 +1,15 @@
-
-@import 'utils/_tailwind.css';
-@import 'utils/_accessibility.css';
+@import "utils/_tailwind.css";
+@import "utils/_accessibility.css";
 
 /* purgecss start ignore */
 
-:focus, button:focus {
-    outline: solid  3px rgba(0,0,0,0.05);
-    outline-offset: 4px;
+:focus,
+button:focus {
+	outline: none;
 }
 
 a {
-	@apply text-ws-blue-500 underline;
+	/* @apply text-ws-blue-500 underline; */
 }
 
 .rocket {

@@ -5,11 +5,11 @@
     {% if site.env %}
       <!-- capture the CSS content as a Liquid variable -->
       {% set css %}{% include "app.compiled.css" %}{% endset %}
-      <style> 
-        {{ css | safe }}
+      <style>
+        {{css | safe}}
       </style>
     {% else %}
-    <link rel="stylesheet" href="/static/app.compiled.css">
+      <link rel="stylesheet" href="/static/app.compiled.css">
     {% endif %}
   </head>
   <body>

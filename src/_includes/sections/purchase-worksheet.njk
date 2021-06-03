@@ -1,0 +1,45 @@
+{% import "macros/button.njk" as button %}
+
+<div class="mb-32">
+
+	<h2 class="text-center text-ty-h2 font-merri font-bold mb-8">
+    	Purchase Worksheets
+  	</h2>
+
+	<div class="flex a-vp:flex-col-reverse d-vp:flex-row items-center justify-between a-vp:px-3 e-vp:px-0">
+
+		<div class="px-10 pb-10 pt-5 bg-lightCyan rounded-large a-vp:w-full e-vp:w-5/12 d-vp:w-7/12">
+
+			{% include "sections/select-country.njk" %}
+
+			<p class="font-sourceSans font-semibold text-ty-p mb-4">Worksheets to purchase</p>
+
+			<div class="mb-8">
+
+				{% for item in worksheet.worksheets %}
+
+					{% include "sections/worksheet-item.njk" %}
+
+				{% endfor %}
+
+			</div>
+
+			<div class="mb-3">
+
+				{{ button.primaryButton("Purchase", "w-full text-ty-p font-bold mb-3 purchase") }}
+
+				{{ button.secondaryButton("Get samples of worksheets", "get-samples text-ty-h5 w-full") }}
+
+			</div>
+
+			<p class="font-sourceSans font-semibold text-ty-ps text-center">Not Ready to Purchase? <a href="" class="text-blue-500">Get samples</a> of our worksheets</p>
+
+		</div>
+
+		<div class="a-vp:mb-6 d-vp:mb-0 flex justify-center items-center d-vp:w-1/2">
+			<img src="/static/images/undraw_booking.png" alt="Undraw booking" width="90%"/>
+		</div>
+
+	</div>
+
+</div>

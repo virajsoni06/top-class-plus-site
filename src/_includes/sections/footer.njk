@@ -1,0 +1,14 @@
+<div>
+
+    <div class="flex justify-between items-center py-3 a-vp:px-3 a-vp:flex-col c-vp:flex-row e-vp:px-0">
+        <p class="text-ty-ps font-sourceSans font-semibold">© 2020 ALL RIGHTS RESERVED | Top Class Plus</p>
+        <div class="flex a-vp:mt-1 c-vp:mt-0">
+            {% for item in card.cards %}
+
+                <img src={{ item.source }} alt={{ item.alt }} width="40px" class="ml-2"/>
+
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
