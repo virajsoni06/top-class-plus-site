@@ -1,3 +1,5 @@
+import getUserLocation, { updateCurrencySymbol } from "./getUserLocation";
+
 const currency = document.querySelectorAll(".currency");
 const changeCountry = document.querySelector(".change");
 const dropdown = document.querySelector(".dropdown");
@@ -9,6 +11,7 @@ const optionCountry = document.querySelectorAll(".country-option");
 const getSamplesButton = document.querySelector(".get-samples");
 const purchaseButton = document.querySelector(".purchase");
 const closeButton = document.querySelector(".close-btn");
+const subscribeButton = document.querySelector(".subscribe-btn");
 
 const commonModal = document.querySelectorAll(".modal");
 const closeModal = document.querySelectorAll(".close-modal");
@@ -18,32 +21,13 @@ const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
 
 // fetching user geo location in order to display currency symbol
-fetch("https://extreme-ip-lookup.com/json/")
-	.then(res => res.json())
-	.then(response => {
-		if (response.country === "India") {
-			currency.forEach(function(item) {
-				item.innerHTML = "₹";
-			});
-		} else if (response.country === "United States") {
-			currency.forEach(function(item) {
-				item.innerHTML = "$";
-			});
-		} else if (response.country === "United Kingdom") {
-			currency.forEach(function(item) {
-				item.innerHTML = "£";
-			});
-		} else {
-			currency.forEach(function(item) {
-				item.innerHTML = "$";
-			});
-		}
-	})
-	.catch((data, status) => {
-		currency.forEach(function(item) {
-			item.innerHTML = "$";
-		});
-	});
+async function updateLocationBasedData() {
+	const userLocation = await getUserLocation();
+	if (userLocation) {
+		updateCurrencySymbol(currency, userLocation);
+	}
+}
+updateLocationBasedData();
 
 // toggle country dropdown
 changeCountry?.addEventListener("click", function() {
@@ -111,3 +95,13 @@ closeButton?.addEventListener("click", function() {
 		commonModal?.classList.remove("show");
 	}
 });
+
+// subscribeButton.addEventListener("click", function() {
+// 	// console.log("jinglis button working");
+// 	if (typeof bento$ != "undefined") {
+// 		bento$(function() {
+// 			bento.updateFields({ first_name: "name", last_name: "changed" });
+// 			bento.view();
+// 		});
+// 	}
+// });
