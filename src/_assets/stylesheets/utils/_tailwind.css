@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 @layer utilities {
+	html {
+		scroll-behavior: smooth;
+	}
 	.position-middle {
 		top: -20px;
 		left: 44%;

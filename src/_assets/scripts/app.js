@@ -1,10 +1,14 @@
 import getUserLocation, { updateCurrencySymbol } from "./getUserLocation";
+import updateCurrentYear from "./updateCurrentYear";
+
+const purchaseWorksheetSection = document.getElementById("purchase-worksheets");
 
 const currency = document.querySelectorAll(".currency");
 const changeCountry = document.querySelector(".change");
 const dropdown = document.querySelector(".dropdown");
 const worksheetItem = document.querySelectorAll(".worksheet-item");
 const checkbox = document.querySelectorAll(".checkbox-img");
+const selectCountryContainer = document.querySelector(".country-container");
 const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
 
@@ -28,6 +32,9 @@ async function updateLocationBasedData() {
 	}
 }
 updateLocationBasedData();
+
+// updating year dynamically in the footer
+updateCurrentYear();
 
 // toggle country dropdown
 changeCountry?.addEventListener("click", function() {
@@ -93,6 +100,18 @@ closeModal?.forEach(function(item) {
 closeButton?.addEventListener("click", function() {
 	if (commonModal?.classList.contains("show")) {
 		commonModal?.classList.remove("show");
+	}
+});
+
+// close dropdown if clicked anywhere on the page
+document.body.addEventListener("click", function(e) {
+	if (
+		e.target !== selectCountryContainer &&
+		!selectCountryContainer.contains(e.target)
+	) {
+		if (dropdown?.classList.contains("show")) {
+			dropdown.classList.remove("show");
+		}
 	}
 });
 
