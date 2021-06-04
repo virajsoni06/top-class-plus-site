@@ -1,5 +1,9 @@
-import getUserLocation, { updateCurrencySymbol } from "./getUserLocation";
+import getUserLocation, { updateCurrencySymbolOnLoad, updatedCurrencyOnSelect } from "./getUserLocation";
 import updateCurrentYear from "./updateCurrentYear";
+
+const scrollReveal = ScrollReveal({
+	duration : 2000
+});
 
 const purchaseWorksheetSection = document.getElementById("purchase-worksheets");
 
@@ -26,11 +30,14 @@ const purchaseModal = document.querySelector(".purchase-modal");
 const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
 
+console.log("jinglis", scrollReveal);
+scrollReveal.reveal('.features-section');
+
 // fetching user geo location in order to display currency symbol
 async function updateLocationBasedData() {
 	const userLocation = await getUserLocation();
 	if (userLocation) {
-		updateCurrencySymbol(currency, userLocation);
+		updateCurrencySymbolOnLoad(currency, userLocation);
 	}
 }
 updateLocationBasedData();
@@ -71,8 +78,10 @@ worksheetItem?.forEach(function(item) {
 // setting selected country
 optionCountry?.forEach(function(country) {
 	country?.addEventListener("click", function() {
+		let countryName = country.innerText;
 		let selectedContent = country.innerHTML;
 		selectedCountry.innerHTML = selectedContent;
+		updatedCurrencyOnSelect(countryName, currency);
 		dropdown?.classList.remove("show");
 	});
 });
@@ -99,8 +108,6 @@ closeModal?.forEach(function(item) {
 		});
 	});
 });
-
-// el.scrollIntoView(true);
 
 // common function to close all modal variants
 closeButton?.forEach(function(item) {
