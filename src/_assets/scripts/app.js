@@ -13,6 +13,7 @@ const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
 
 const getSamplesButton = document.querySelector(".get-samples");
+const moveToPurchaseButton = document.querySelectorAll(".btn-purchase"); 
 const purchaseButton = document.querySelector(".purchase");
 const payButton = document.querySelector(".pay");
 const closeButton = document.querySelectorAll(".close-btn");
@@ -99,12 +100,21 @@ closeModal?.forEach(function(item) {
 	});
 });
 
+// el.scrollIntoView(true);
+
 // common function to close all modal variants
 closeButton?.forEach(function(item) {
 	item.addEventListener("click", function() {
 		commonModal.forEach(function(modal) {
 			if (modal?.classList.contains("show")) modal.classList.remove("show");
 		});
+	});
+});
+
+// scroll to purchase section view if clicked button
+moveToPurchaseButton?.forEach(function(item) {
+	item.addEventListener("click", function() {
+		purchaseWorksheetSection.scrollIntoView(true);
 	});
 });
 
