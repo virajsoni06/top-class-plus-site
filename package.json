@@ -1,7 +1,7 @@
 {
-	"name": "jamstack-web-starter",
-	"version": "1.6.1",
-	"description": "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS",
+	"name": "topclassplus-website",
+	"version": "1.0.0",
+	"description": "Top Class Plus Website",
 	"scripts": {
 		"clean": "del dist",
 		"dev:postcss": "postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch --verbose",
@@ -13,8 +13,8 @@
 		"start": "run-p dev:* --print-label",
 		"build": "run-s clean build:* --print-label"
 	},
-	"author": "Chris Collins",
-	"license": "ISC",
+	"author": "TranslateZ",
+	"license": "UNLICENSED",
 	"devDependencies": {
 		"@11ty/eleventy": "^0.11.0",
 		"@babel/core": "^7.11.6",

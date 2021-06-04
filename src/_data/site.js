@@ -1,12 +1,11 @@
 module.exports = {
-	title: "Web Starter",
-	description:
-		"Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS",
-	url: "https://webstarter.chriscollins.me",
-	author: "Chris Collins",
+	title: "Top Class Plus",
+	description: "Math worksheets for Kindergarten to Grade 5",
+	url: "https://topclassplus.com",
+	author: "TranslateZ",
 	meta_data: {
-		twitter: "@scottishstoater",
-		default_social_image: "/static/default_social_image.jpg"
+		// twitter: "",
+		// default_social_image: "",
 	},
-	env: process.env.ELEVENTY_ENV === "production"
+	env: process.env.ELEVENTY_ENV === "production",
 };
