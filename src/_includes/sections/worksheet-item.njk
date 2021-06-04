@@ -6,7 +6,9 @@
 
         <div class="select-none">
 
-            <p class="font-sourceSans text-ty-ps font-semibold">{{ item.name }}</p>
+            <p class="font-sourceSans text-ty-ps font-semibold">
+                {{ item.name }} - <span class="currency"></span>{{ item.price }}
+            </p>
 
             <p class="font-sourceSans text-xs">{{ item.ageGroup }}</p>
 
@@ -16,7 +18,7 @@
 
     <div class="hover-trigger relative">
 
-        <img src="/static/images/info.png" alt="info" width="24px" class="cursor-pointer"/>
+        <img src="/static/images/info.svg" alt="info" width="24px" class="cursor-pointer fill-turquoise"/>
 
         {# info-card #}
         {% include "sections/info-card.njk" %}

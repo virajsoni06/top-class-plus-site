@@ -31,6 +31,9 @@ module.exports = {
 				large: "10px"
 			}
 		},
+		fill: theme => ({
+			turquoise: theme("colors.turquoise")
+		}),
 		maxWidth: {
 			wrap: "1110px",
 			features: "925px",

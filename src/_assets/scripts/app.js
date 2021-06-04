@@ -4,7 +4,7 @@ import updateCurrentYear from "./updateCurrentYear";
 const purchaseWorksheetSection = document.getElementById("purchase-worksheets");
 
 const currency = document.querySelectorAll(".currency");
-const changeCountry = document.querySelector(".change");
+// const changeCountry = document.querySelector(".change");
 const dropdown = document.querySelector(".dropdown");
 const worksheetItem = document.querySelectorAll(".worksheet-item");
 const checkbox = document.querySelectorAll(".checkbox-img");
@@ -14,7 +14,8 @@ const optionCountry = document.querySelectorAll(".country-option");
 
 const getSamplesButton = document.querySelector(".get-samples");
 const purchaseButton = document.querySelector(".purchase");
-const closeButton = document.querySelector(".close-btn");
+const payButton = document.querySelector(".pay");
+const closeButton = document.querySelectorAll(".close-btn");
 const subscribeButton = document.querySelector(".subscribe-btn");
 
 const commonModal = document.querySelectorAll(".modal");
@@ -23,9 +24,6 @@ const sampleModal = document.querySelector(".sample-modal");
 const purchaseModal = document.querySelector(".purchase-modal");
 const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
-
-// window.sr = ScrollReveal({ reset: true });
-// window.sr.reveal(selectCountryContainer, { duration: 200 });
 
 // fetching user geo location in order to display currency symbol
 async function updateLocationBasedData() {
@@ -40,9 +38,11 @@ updateLocationBasedData();
 updateCurrentYear();
 
 // toggle country dropdown
-changeCountry?.addEventListener("click", function() {
-	if (!dropdown?.classList.contains("show")) {
-		dropdown.classList.add("show");
+selectCountryContainer?.addEventListener("click", function(e) {
+	if (e.target !== dropdown && !dropdown.contains(e.target)) {
+		if (!dropdown?.classList.contains("show")) {
+			dropdown.classList.add("show");
+		}
 	}
 });
 
@@ -100,9 +100,21 @@ closeModal?.forEach(function(item) {
 });
 
 // common function to close all modal variants
-closeButton?.addEventListener("click", function() {
-	if (commonModal?.classList.contains("show")) {
-		commonModal?.classList.remove("show");
+closeButton?.forEach(function(item) {
+	item.addEventListener("click", function() {
+		commonModal.forEach(function(modal) {
+			if (modal?.classList.contains("show")) modal.classList.remove("show");
+		});
+	});
+});
+
+// display thank you/ order complete modal after successful pay
+payButton?.addEventListener("click", function() {
+	commonModal?.forEach(function(modal) {
+		if (modal?.classList.contains("show")) modal.classList.remove("show");
+	});
+	if (!orderCompleteModal?.classList.contains("show")) {
+		orderCompleteModal?.classList.add("show");
 	}
 });
 
