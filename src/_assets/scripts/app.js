@@ -1,4 +1,3 @@
-// import ScrollReveal from "scrollreveal";
 import getUserLocation, { updateCurrencySymbol } from "./getUserLocation";
 import updateCurrentYear from "./updateCurrentYear";
 
@@ -25,11 +24,8 @@ const purchaseModal = document.querySelector(".purchase-modal");
 const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
 
-// Custom Settings
-// sr.reveal(".foo-1", { duration: 200 });
-window.sr = ScrollReveal({ reset: true });
-console.log("jinglis", sr);
-window.sr.reveal(selectCountryContainer, { duration: 200 });
+// window.sr = ScrollReveal({ reset: true });
+// window.sr.reveal(selectCountryContainer, { duration: 200 });
 
 // fetching user geo location in order to display currency symbol
 async function updateLocationBasedData() {
