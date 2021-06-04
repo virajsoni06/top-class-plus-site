@@ -1,7 +1,6 @@
 module.exports = {
-	title: "Web Starter",
-	description:
-		"Minimal boilerplate for new projects built with Eleventy, Tailwind and PostCSS",
+	// title: "Top Class PLus",
+	description: "Making Learning Fun",
 	url: "https://webstarter.chriscollins.me",
 	author: "Chris Collins",
 	meta_data: {

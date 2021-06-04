@@ -1,3 +1,4 @@
+// import ScrollReveal from "scrollreveal";
 import getUserLocation, { updateCurrencySymbol } from "./getUserLocation";
 import updateCurrentYear from "./updateCurrentYear";
 
@@ -23,6 +24,12 @@ const sampleModal = document.querySelector(".sample-modal");
 const purchaseModal = document.querySelector(".purchase-modal");
 const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
+
+// Custom Settings
+// sr.reveal(".foo-1", { duration: 200 });
+window.sr = ScrollReveal({ reset: true });
+console.log("jinglis", sr);
+window.sr.reveal(selectCountryContainer, { duration: 200 });
 
 // fetching user geo location in order to display currency symbol
 async function updateLocationBasedData() {
@@ -50,14 +57,14 @@ worksheetItem?.forEach(function(item) {
 			item.classList.add("selected");
 			checkbox.forEach(function(check) {
 				if (item?.contains(check)) {
-					check.src = "/static/images/checked.png";
+					check.src = "/static/images/checked.svg";
 				}
 			});
 		} else {
 			item.classList.remove("selected");
 			checkbox.forEach(function(check) {
 				if (item?.contains(check)) {
-					check.src = "/static/images/outline.png";
+					check.src = "/static/images/outline.svg";
 				}
 			});
 		}
