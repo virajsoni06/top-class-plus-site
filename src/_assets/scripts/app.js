@@ -1,14 +1,12 @@
-import getUserLocation, { updateCurrencySymbolOnLoad, updatedCurrencyOnSelect } from "./getUserLocation";
+import getUserLocation, {
+	updateCurrencySymbolOnLoad,
+	updatedCurrencyOnSelect
+} from "./getUserLocation";
 import updateCurrentYear from "./updateCurrentYear";
-
-const scrollReveal = ScrollReveal({
-	duration : 2000
-});
 
 const purchaseWorksheetSection = document.getElementById("purchase-worksheets");
 
 const currency = document.querySelectorAll(".currency");
-// const changeCountry = document.querySelector(".change");
 const dropdown = document.querySelector(".dropdown");
 const worksheetItem = document.querySelectorAll(".worksheet-item");
 const checkbox = document.querySelectorAll(".checkbox-img");
@@ -17,7 +15,7 @@ const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
 
 const getSamplesButton = document.querySelector(".get-samples");
-const moveToPurchaseButton = document.querySelectorAll(".btn-purchase"); 
+const moveToPurchaseButton = document.querySelectorAll(".btn-purchase");
 const purchaseButton = document.querySelector(".purchase");
 const payButton = document.querySelector(".pay");
 const closeButton = document.querySelectorAll(".close-btn");
@@ -29,9 +27,6 @@ const sampleModal = document.querySelector(".sample-modal");
 const purchaseModal = document.querySelector(".purchase-modal");
 const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
-
-console.log("jinglis", scrollReveal);
-scrollReveal.reveal('.features-section');
 
 // fetching user geo location in order to display currency symbol
 async function updateLocationBasedData() {
@@ -156,3 +151,14 @@ document.body.addEventListener("click", function(e) {
 // 		});
 // 	}
 // });
+
+// revealing sections on scroll
+const scrollReveal = ScrollReveal({
+	distance: "40px",
+	duration: 1500,
+	delay: 100,
+	scale: 0.9
+});
+scrollReveal.reveal(".features-section", { duration: 1500 });
+scrollReveal.reveal(".get-worksheets", { duration: 1500 });
+// scrollReveal.reveal(purchaseWorksheetSection, { duration: 1500 });
