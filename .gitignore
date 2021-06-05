@@ -70,3 +70,4 @@ dist
 src/static/app.bundled.js
 src/static/app.compiled.css
 src/_includes/app.compiled.css
+.vercel
