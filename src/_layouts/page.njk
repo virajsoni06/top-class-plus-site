@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "head.njk" %}
+        {% if site.env %}
+            <!-- capture the CSS content as a Liquid variable -->
+            {% set css %}{% include "app.compiled.css" %}{% endset %}
+            <style>
+                {{css | safe}}
+            </style>
+        {% else %}
+            <link rel="stylesheet" href="/static/app.compiled.css">
+        {% endif %}
+    </head>
+    <body>
+        <a href="#main" class="skip-link">Skip to main content</a>
+        <div class="max-w-wrap mx-auto pt-6 mb-20">
+            {% include "sections/top-nav.njk" %}
+        </div>
+        {{ content | safe }}
+        <div class="bg-skyBlue">
+            <div class="max-w-wrap mx-auto">
+                {% include "sections/footer.njk" %}
+            </div>
+        </div>
+    </body>
+</html>

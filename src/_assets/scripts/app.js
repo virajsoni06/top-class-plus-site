@@ -30,7 +30,13 @@ const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
 
 const getSampleForm = document.getElementById("get-sample-form");
-const subscribeNewsletterForm = document.getElementById("subscribe-to-newsletter");
+const subscribeNewsletterForm = document.getElementById(
+	"subscribe-to-newsletter"
+);
+
+if ("scrollRestoration" in history) {
+	history.scrollRestoration = "manual";
+}
 
 // fetching user geo location in order to display currency symbol
 async function updateLocationBasedData() {
@@ -156,22 +162,20 @@ document.body.addEventListener("click", function(e) {
 // 	}
 // });
 
-
-
 // FORMS LOGIC/EVENTS
-getSampleForm?.addEventListener('submit', function(e){
+getSampleForm?.addEventListener("submit", function(e) {
 	e.preventDefault();
 	let elements = getSampleForm?.elements;
 	let name, email;
-	for(let i = 0; i < elements.length; i++){
-		if(elements[i].name === 'name') name = elements[i].value.trim();
-		if(elements[i].name === 'email') email = elements[i].value.trim();
+	for (let i = 0; i < elements.length; i++) {
+		if (elements[i].name === "name") name = elements[i].value.trim();
+		if (elements[i].name === "email") email = elements[i].value.trim();
 	}
-	if(name && email){
+	if (name && email) {
 		if (typeof bento$ != "undefined") {
 			bento$(function() {
 				// bento.identify(email);
-				bento.updateFields({ first_name: name});
+				bento.updateFields({ first_name: name });
 				bento.tag("sample");
 				bento.view();
 			});
@@ -179,13 +183,13 @@ getSampleForm?.addEventListener('submit', function(e){
 	}
 });
 
-subscribeNewsletterForm?.addEventListener('submit', function(e) {
+subscribeNewsletterForm?.addEventListener("submit", function(e) {
 	e.preventDefault();
 	let elements = subscribeNewsletterForm?.elements;
 	let email;
-	for(let i = 0; i < elements.length; i++)
-		if(elements[i].name === 'email') email = elements[i].value.trim();
-	if(email){
+	for (let i = 0; i < elements.length; i++)
+		if (elements[i].name === "email") email = elements[i].value.trim();
+	if (email) {
 		if (typeof bento$ != "undefined") {
 			bento$(function() {
 				// bento.identify(email);
@@ -193,12 +197,12 @@ subscribeNewsletterForm?.addEventListener('submit', function(e) {
 				bento.view();
 			});
 		}
-		if(subscribeText){
+		if (subscribeText) {
 			subscribeText.innerText = "Thank you for subscribing!";
-			subscribeNewsletterForm.style.display = 'none';
-		} 
+			subscribeNewsletterForm.style.display = "none";
+		}
 	}
-})
+});
 
 // SCROLL REVEAL
 const revealElements = document.querySelectorAll(".reveal");

@@ -24,6 +24,7 @@ module.exports = function(eleventyConfig) {
 
 	// This allows Eleventy to watch for file changes during local development.
 	eleventyConfig.setUseGitIgnore(false);
+	// eleventyConfig.addLayoutAlias("terms", "pages/terms.njk");
 
 	return {
 		dir: {
