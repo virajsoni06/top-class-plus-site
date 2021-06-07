@@ -29,13 +29,21 @@ module.exports = {
 			borderRadius: {
 				small: "5px",
 				large: "10px"
+			},
+			spacing: {
+				"72": "24rem",
+				"84": "27rem",
+				"96": "30rem"
 			}
 		},
 		fill: theme => ({
 			turquoise: theme("colors.turquoise")
 		}),
 		maxWidth: {
+			large: "1200px",
 			wrap: "1110px",
+			half: "550px",
+			img: "500px",
 			features: "925px",
 			featureCard: "255px"
 		},
@@ -46,6 +54,10 @@ module.exports = {
 			"d-vp": "768px",
 			"e-vp": "992px",
 			"f-vp": "1200px"
+		},
+		minWidth: {
+			half: "550px",
+			img: "500px"
 		},
 		borderWidth: {
 			tiny: "0.15px",

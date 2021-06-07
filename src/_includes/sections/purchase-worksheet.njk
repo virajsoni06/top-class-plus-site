@@ -6,9 +6,11 @@
     	Purchase Worksheets
   	</h2>
 
-	<div class="flex a-vp:flex-col d-vp:flex-row items-center justify-between a-vp:px-3 e-vp:px-0 overflow-hidden">
+	<div class="flex a-vp:flex-col d-vp:flex-row items-center justify-between e-vp:px-0 overflow-hidden">
 
-		<div class="a-vp:px-2 b-vp:px-10 pb-10 pt-5 bg-lightCyan rounded-large a-vp:w-full e-vp:w-5/12 d-vp:w-7/12 reveal-bottom">
+		 {# c-vp:w-84 d-vp:w-64 e-vp:w-5/12 d-vp:w-7/12 #}
+
+		<div class="a-vp:px-2 b-vp:px-10 pb-10 pt-5 bg-lightCyan rounded-large a-vp:w-full d-vp:min-w-half d-vp:max-w-half d-vp:mr-3 e-vp:mr-0 reveal-bottom">
 
 			{% include "sections/select-country.njk" %}
 
@@ -44,8 +46,8 @@
 			<img src="/static/images/undraw_booking.svg" alt="Undraw booking" width="90%" class="reveal-right"/>
 		</div> #}
 
-		<div class="a-vp:mt-6 d-vp:mt-0 flex justify-center items-center d-vp:w-1/2 overflow-hidden">
-			<img src="/static/images/undraw_booking.svg" alt="Undraw booking" width="90%" class="reveal-right"/>
+		<div class="a-vp:mt-6 d-vp:mt-0 flex justify-center items-center a-vp:w-full d-vp:min-w-img d-vp:max-w-img overflow-hidden">
+			<img src="/static/images/undraw_booking.svg" alt="Undraw booking" width="100%" class="reveal-right"/>
 		</div>
 
 	</div>
