@@ -28,6 +28,15 @@ const purchaseModal = document.querySelector(".purchase-modal");
 const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
 
+const getSampleForm = document.getElementById("get-sample-form");
+getSampleForm.addEventListener('submit', function(e){
+	e.preventDefault();
+	// let elements = getSampleForm.elements;
+	// for(let i = 0; i < elements.length; i++){
+	// 	console.log( elements[i].value);
+	// }
+});
+
 // fetching user geo location in order to display currency symbol
 async function updateLocationBasedData() {
 	const userLocation = await getUserLocation();
@@ -151,6 +160,9 @@ document.body.addEventListener("click", function(e) {
 // 		});
 // 	}
 // });
+
+
+
 
 // revealing sections on scroll
 const revealElements = document.querySelectorAll(".reveal");
