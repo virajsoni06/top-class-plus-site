@@ -2,7 +2,6 @@ import getUserLocation, {
 	updateCurrencySymbolOnLoad,
 	updatedCurrencyOnSelect
 } from "./getUserLocation";
-import updateCurrentYear from "./updateCurrentYear";
 
 const purchaseWorksheetSection = document.getElementById("purchase-worksheets");
 
@@ -30,9 +29,7 @@ const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
 
 const getSampleForm = document.getElementById("get-sample-form");
-const subscribeNewsletterForm = document.getElementById(
-	"subscribe-to-newsletter"
-);
+const subscribeNewsletterForm = document.getElementById("newsletter-form");
 
 if ("scrollRestoration" in history) {
 	history.scrollRestoration = "manual";
@@ -46,9 +43,6 @@ async function updateLocationBasedData() {
 	}
 }
 updateLocationBasedData();
-
-// updating year dynamically in the footer
-updateCurrentYear();
 
 // toggle country dropdown
 selectCountryContainer?.addEventListener("click", function(e) {
@@ -151,16 +145,6 @@ document.body.addEventListener("click", function(e) {
 		}
 	}
 });
-
-// subscribeButton.addEventListener("click", function() {
-// 	// console.log("jinglis button working");
-// 	if (typeof bento$ != "undefined") {
-// 		bento$(function() {
-// 			bento.updateFields({ first_name: "name", last_name: "changed" });
-// 			bento.view();
-// 		});
-// 	}
-// });
 
 // FORMS LOGIC/EVENTS
 getSampleForm?.addEventListener("submit", function(e) {
