@@ -8,7 +8,7 @@ const purchaseWorksheetSection = document.getElementById("purchase-worksheets");
 const currency = document.querySelectorAll(".currency");
 const dropdown = document.querySelector(".dropdown");
 const worksheetItem = document.querySelectorAll(".worksheet-item");
-const checkbox = document.querySelectorAll(".checkbox-img");
+const checkbox = document.querySelectorAll(".check-container");
 const selectCountryContainer = document.querySelector(".country-container");
 const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
@@ -31,6 +31,7 @@ const orderCompleteModal = document.querySelector(".order-complete-modal");
 const getSampleForm = document.getElementById("get-sample-form");
 const subscribeNewsletterForm = document.getElementById("newsletter-form");
 
+// avoid restoring scroll position on page revisit
 if ("scrollRestoration" in history) {
 	history.scrollRestoration = "manual";
 }
@@ -58,16 +59,16 @@ worksheetItem?.forEach(function(item) {
 	item.addEventListener("click", function() {
 		if (!item?.classList.contains("selected")) {
 			item.classList.add("selected");
-			checkbox.forEach(function(check) {
+			checkbox?.forEach(function(check) {
 				if (item?.contains(check)) {
-					check.src = "/static/images/checked.svg";
+					check.classList.add("checked");
 				}
 			});
 		} else {
 			item.classList.remove("selected");
-			checkbox.forEach(function(check) {
+			checkbox?.forEach(function(check) {
 				if (item?.contains(check)) {
-					check.src = "/static/images/outline.svg";
+					check.classList.remove("checked");
 				}
 			});
 		}
