@@ -1,17 +1,17 @@
 {% import "macros/button.njk" as button %}
 
-<div class="bg-skyBlue mx-auto a-vp:w-11/12 c-vp:w-card px-5 pt-5 pb-8 rounded-large border-transparent">
+<div class="bg-skyBlue mx-auto a-vp:w-11/12 c-vp:w-card px-5 py-5 rounded-large border-transparent">
 
-    <p class="text-center font-merri font-bold pb-4 text-ty-p">
+    <p class="text-center font-merri font-bold text-ty-p subscribe-text">
         Subscribe to our newsletter to hear about exciting offers & new products!
     </p>
 
-    <form>
-        <div class="flex items-center b-vp:justify-between b-vp:flex-row a-vp:flex-col">
+    <form id="subscribe-to-newsletter" type="POST">
+        <div class="flex items-center mt-4 b-vp:justify-between b-vp:flex-row a-vp:flex-col">
 
-            <input type="text" placeholder="Email Address" class="py-2 pl-3 text-ty-p flex-1 mr-3 rounded border-2 border-turquoise font-sourceSans a-vp:w-full"/>
+            <input type="email" name="email" placeholder="Email Address" class="py-2 pl-3 text-ty-p flex-1 mr-3 rounded border-2 border-turquoise font-sourceSans a-vp:w-full" required/>
 
-            {{ button.secondaryButton('Subscribe', 'subscribe-btn') }}
+            {{ button.secondaryButton('Subscribe', 'subscribe-btn', type="sumbit") }}
 
         </div>
     </form>

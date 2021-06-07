@@ -13,6 +13,7 @@ const checkbox = document.querySelectorAll(".checkbox-img");
 const selectCountryContainer = document.querySelector(".country-container");
 const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
+const subscribeText = document.querySelector(".subscribe-text");
 
 const getSamplesButton = document.querySelector(".get-samples");
 const moveToPurchaseButton = document.querySelectorAll(".btn-purchase");
@@ -29,7 +30,7 @@ const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
 
 const getSampleForm = document.getElementById("get-sample-form");
-
+const subscribeNewsletterForm = document.getElementById("subscribe-to-newsletter");
 
 // fetching user geo location in order to display currency symbol
 async function updateLocationBasedData() {
@@ -163,13 +164,13 @@ getSampleForm?.addEventListener('submit', function(e){
 	let elements = getSampleForm?.elements;
 	let name, email;
 	for(let i = 0; i < elements.length; i++){
-		if(elements[i].name === 'name') name = elements[i].value;
-		if(elements[i].name === 'email') email = elements[i].value;
+		if(elements[i].name === 'name') name = elements[i].value.trim();
+		if(elements[i].name === 'email') email = elements[i].value.trim();
 	}
 	if(name && email){
 		if (typeof bento$ != "undefined") {
 			bento$(function() {
-				bento.identify(email);
+				// bento.identify(email);
 				bento.updateFields({ first_name: name});
 				bento.tag("sample");
 				bento.view();
@@ -177,6 +178,27 @@ getSampleForm?.addEventListener('submit', function(e){
 		}
 	}
 });
+
+subscribeNewsletterForm?.addEventListener('submit', function(e) {
+	e.preventDefault();
+	let elements = subscribeNewsletterForm?.elements;
+	let email;
+	for(let i = 0; i < elements.length; i++)
+		if(elements[i].name === 'email') email = elements[i].value.trim();
+	if(email){
+		if (typeof bento$ != "undefined") {
+			bento$(function() {
+				// bento.identify(email);
+				bento.tag("newsletter");
+				bento.view();
+			});
+		}
+		if(subscribeText){
+			subscribeText.innerText = "Thank you for subscribing!";
+			subscribeNewsletterForm.style.display = 'none';
+		} 
+	}
+})
 
 // SCROLL REVEAL
 const revealElements = document.querySelectorAll(".reveal");
