@@ -153,12 +153,21 @@ document.body.addEventListener("click", function(e) {
 // });
 
 // revealing sections on scroll
+const revealElements = document.querySelectorAll(".reveal");
 const scrollReveal = ScrollReveal({
 	distance: "40px",
-	duration: 1500,
+	duration: 500,
 	delay: 100,
 	scale: 0.9
 });
-scrollReveal.reveal(".features-section", { duration: 1500 });
-scrollReveal.reveal(".get-worksheets", { duration: 1500 });
-// scrollReveal.reveal(purchaseWorksheetSection, { duration: 1500 });
+scrollReveal.reveal(revealElements);
+scrollReveal.reveal(".reveal-right", {
+	origin: "right",
+	distance: "50px",
+	delay: 300
+});
+scrollReveal.reveal(".reveal-bottom", {
+	origin: "bottom",
+	distance: "50px",
+	delay: 300
+});
