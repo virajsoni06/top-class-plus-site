@@ -13,9 +13,9 @@
 
 	<form id="get-sample-form" type="POST">
 
-		<input type="text" placeholder="Name" class="py-2 pl-3 text-ty-p flex-1 mr-3 mb-5 rounded border-2 border-turquoise font-sourceSans a-vp:w-full" required/>
+		<input type="text" name="name" placeholder="Name" class="py-2 pl-3 text-ty-p flex-1 mr-3 mb-5 rounded border-2 border-turquoise font-sourceSans a-vp:w-full" required/>
 
-		<input type="email" placeholder="Email Address" class="py-2 pl-3 text-ty-p flex-1 mr-3 mb-5 rounded border-2 border-turquoise font-sourceSans a-vp:w-full" required/>
+		<input type="email" name="email" placeholder="Email Address" class="py-2 pl-3 text-ty-p flex-1 mr-3 mb-5 rounded border-2 border-turquoise font-sourceSans a-vp:w-full" required/>
 
 		{{ button.primaryButton("Get Samples", "w-full text-ty-p font-bold mb-3", type = "submit") }}
 

@@ -29,13 +29,7 @@ const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
 
 const getSampleForm = document.getElementById("get-sample-form");
-getSampleForm.addEventListener('submit', function(e){
-	e.preventDefault();
-	// let elements = getSampleForm.elements;
-	// for(let i = 0; i < elements.length; i++){
-	// 	console.log( elements[i].value);
-	// }
-});
+
 
 // fetching user geo location in order to display currency symbol
 async function updateLocationBasedData() {
@@ -163,8 +157,28 @@ document.body.addEventListener("click", function(e) {
 
 
 
+// FORMS LOGIC/EVENTS
+getSampleForm?.addEventListener('submit', function(e){
+	e.preventDefault();
+	let elements = getSampleForm?.elements;
+	let name, email;
+	for(let i = 0; i < elements.length; i++){
+		if(elements[i].name === 'name') name = elements[i].value;
+		if(elements[i].name === 'email') email = elements[i].value;
+	}
+	if(name && email){
+		if (typeof bento$ != "undefined") {
+			bento$(function() {
+				bento.identify(email);
+				bento.updateFields({ first_name: name});
+				bento.tag("sample");
+				bento.view();
+			});
+		}
+	}
+});
 
-// revealing sections on scroll
+// SCROLL REVEAL
 const revealElements = document.querySelectorAll(".reveal");
 const scrollReveal = ScrollReveal({
 	distance: "40px",
