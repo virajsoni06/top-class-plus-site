@@ -18,13 +18,12 @@ module.exports = {
 				info: "180px"
 			},
 			fontSize: {
-				"ty-h1": "58px",
-				"ty-h2": "45px",
-				"ty-h4": "28px",
-				"ty-h5": "22px",
-				"ty-h6": "18px",
-				"ty-p": "18px",
-				"ty-ps": "14px"
+				alpha: "58px",
+				beta: "45px",
+				gamma: "28px",
+				delta: "22px",
+				epsilon: "18px",
+				zeta: "14px"
 			},
 			borderRadius: {
 				small: "5px",

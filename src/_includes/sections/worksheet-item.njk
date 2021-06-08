@@ -1,34 +1,34 @@
 <div class="worksheet-item flex items-center justify-between bg-white rounded-small border-tiny border-black px-2 py-2 mb-2 cursor-pointer hover:border-turquoise transition-all duration-100">
 
-    <div class="flex items-center">
+	<div class="flex items-center">
 
-        <div class="check-container mr-3">
-            <div class="checkmark"></div>
-        </div>
+		<div class="check-container mr-3">
+			<div class="checkmark"></div>
+		</div>
 
-        <div class="select-none">
+		<div class="select-none">
 
-            <p class="font-sourceSans text-ty-ps font-semibold leading-none mb-1">
-                {{ item.name }} - <span class="currency"></span>{{ item.price }}
-            </p>
+			<p class="font-sourceSans text-zeta font-semibold leading-none mb-1">
+				{{ item.name }} - <span class="currency"></span>{{ item.price }}
+			</p>
 
-            <p class="font-sourceSans text-xs leading-none">{{ item.ageGroup }}</p>
+			<p class="font-sourceSans text-xs leading-none">{{ item.ageGroup }}</p>
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 
-    <div class="hover-trigger relative">
+	<div class="hover-trigger relative">
 
-        <svg class="svg fill-black stroke-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-            <path d="M13 17h-2v-6h2v6zm0-8h-2V7h2v2z" stroke="none"/>
-            <path fill="none" stroke="current-color" stroke-miterlimit="10" stroke-width="2" d="M12 3a9 9 0 100 18 9 9 0 100-18z"/>
-        </svg>
+		<svg class="svg fill-black stroke-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+			<path d="M13 17h-2v-6h2v6zm0-8h-2V7h2v2z" stroke="none"/>
+			<path fill="none" stroke="current-color" stroke-miterlimit="10" stroke-width="2" d="M12 3a9 9 0 100 18 9 9 0 100-18z"/>
+		</svg>
 
-        {% include "sections/info-card.njk" %}
+		{% include "sections/info-card.njk" %}
 
-        <div class="absolute tooltip"></div>
+		<div class="absolute tooltip"></div>
 
-    </div>
+	</div>
 
 </div>
