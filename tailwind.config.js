@@ -23,6 +23,8 @@ module.exports = {
 				gamma: "28px",
 				delta: "22px",
 				epsilon: "18px",
+				eta: "16px",
+				theta: "40px",
 				zeta: "14px"
 			},
 			borderRadius: {
