@@ -22,7 +22,10 @@
 
     <div class="hover-trigger relative">
 
-        <img src="/static/images/info.svg" alt="info" width="24px" class="cursor-pointer"/>
+        <svg class="svg fill-black stroke-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <path d="M13 17h-2v-6h2v6zm0-8h-2V7h2v2z" stroke="none"/>
+            <path fill="none" stroke="current-color" stroke-miterlimit="10" stroke-width="2" d="M12 3a9 9 0 100 18 9 9 0 100-18z"/>
+        </svg>
 
         {# info-card #}
         {% include "sections/info-card.njk" %}

@@ -37,6 +37,11 @@ module.exports = {
 			}
 		},
 		fill: theme => ({
+			black: theme("colors.black"),
+			turquoise: theme("colors.turquoise")
+		}),
+		stroke: theme => ({
+			black: theme("colors.black"),
 			turquoise: theme("colors.turquoise")
 		}),
 		maxWidth: {

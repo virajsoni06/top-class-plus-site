@@ -48,6 +48,9 @@
 		top: 35px;
 		right: 12px;
 	}
+	.hover-trigger:hover .svg {
+		@apply fill-turquoise stroke-turquoise duration-100 ease-in-out;
+	}
 	.hover-trigger:hover .tooltip {
 		@apply h-0 w-0 block;
 		border-top: 10px solid transparent;
