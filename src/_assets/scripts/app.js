@@ -14,12 +14,12 @@ const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
 const subscribeText = document.querySelector(".subscribe-text");
 
-const getSamplesButton = document.querySelector(".get-samples");
-const moveToPurchaseButton = document.querySelectorAll(".btn-purchase");
-const purchaseButton = document.querySelector(".purchase");
-const payButton = document.querySelector(".pay");
-const closeButton = document.querySelectorAll(".close-btn");
-const subscribeButton = document.querySelector(".subscribe-btn");
+const getSamplesButton = document.querySelector(".btn-get-samples");
+const moveToPurchaseButton = document.querySelectorAll(".btn-to-purchase");
+const purchaseButton = document.querySelector(".btn-purchase");
+const payButton = document.querySelector(".btn-pay");
+const closeButton = document.querySelectorAll(".btn-close");
+const subscribeButton = document.querySelector(".btn-subscribe");
 
 const commonModal = document.querySelectorAll(".modal");
 const closeModal = document.querySelectorAll(".close-modal");
@@ -109,7 +109,7 @@ closeModal?.forEach(function(item) {
 	});
 });
 
-// common function to close all modal variants
+// common function to close all modal variants if it is open
 closeButton?.forEach(function(item) {
 	item.addEventListener("click", function() {
 		commonModal.forEach(function(modal) {
@@ -147,7 +147,9 @@ document.body.addEventListener("click", function(e) {
 	}
 });
 
+/////////////////////
 // FORMS LOGIC/EVENTS
+/////////////////////
 getSampleForm?.addEventListener("submit", function(e) {
 	e.preventDefault();
 	let elements = getSampleForm?.elements;
@@ -189,7 +191,9 @@ subscribeNewsletterForm?.addEventListener("submit", function(e) {
 	}
 });
 
+/////////////////////
 // SCROLL REVEAL
+/////////////////////
 const revealElements = document.querySelectorAll(".reveal");
 const scrollReveal = ScrollReveal({
 	distance: "40px",
