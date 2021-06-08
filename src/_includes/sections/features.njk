@@ -2,19 +2,19 @@
 
 	<div class="max-w-features mx-auto">
 
-		<h2 class="text-center font-merri text-ty-h2 mb-16">Features</h2>
+		<h2 class="text-center font-merri text-ty-h2 mb-16 reveal">Features</h2>
 
 		<div class="grid place-items-center gap-y-20 a-vp:grid-cols-1 c-vp:grid-cols-2 d-vp:grid-cols-3">
 
 			{% for item in feature.features %}
 
-				<div class="flex flex-col justify-start relative bg-lightCyan a-vp:w-11/12 d-vp:max-w-featureCard px-2 pt-6 pb-5">
+				<div class="flex flex-col justify-start relative bg-lightCyan a-vp:w-11/12 d-vp:max-w-featureCard px-2 pt-6 pb-5 reveal">
 
 					<p class="text-center font-bold font-merri text-ty-p">{{ item.title }}</p>
 
 					<p class="text-center font-sourceSans text-ty-p">{{ item.description }}</p>
 
-					<img src="/static/images/feature-check.png" alt="Feature check" width="40px" class="absolute position-middle"/>
+					<img src="/static/images/feature-check.svg" alt="Feature check" width="40px" class="absolute position-middle"/>
 
 				</div>
 

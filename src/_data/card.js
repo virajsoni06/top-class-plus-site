@@ -14,8 +14,7 @@ module.exports = {
 		},
 		{
 			source: "/static/images/jcb.png",
-			alt:
-				"JCB"
+			alt: "JCB"
 		},
 		{
 			source: "/static/images/discover.png",

@@ -7,5 +7,5 @@ module.exports = {
 		// twitter: "",
 		// default_social_image: "",
 	},
-	env: process.env.ELEVENTY_ENV === "production",
+	env: process.env.ELEVENTY_ENV === "production"
 };

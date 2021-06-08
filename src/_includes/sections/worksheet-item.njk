@@ -1,14 +1,18 @@
-<div class="worksheet-item flex items-center justify-between bg-white rounded-small border-tiny border-black px-5 py-1 mb-2 cursor-pointer">
+<div class="worksheet-item flex items-center justify-between bg-white rounded-small border-tiny border-black px-2 py-2 mb-2 cursor-pointer hover:border-turquoise transition-all duration-100">
 
     <div class="flex items-center">
 
-        <img src="/static/images/outline.png" alt="checkbox" width="18px" class="checkbox-img mr-6 select-none"/>
+        <div class="check-container mr-3">
+            <div class="checkmark"></div>
+        </div>
 
         <div class="select-none">
 
-            <p class="font-sourceSans text-ty-ps font-semibold">{{ item.name }}</p>
+            <p class="font-sourceSans text-ty-ps font-semibold leading-none mb-1">
+                {{ item.name }} - <span class="currency"></span>{{ item.price }}
+            </p>
 
-            <p class="font-sourceSans text-xs">{{ item.ageGroup }}</p>
+            <p class="font-sourceSans text-xs leading-none">{{ item.ageGroup }}</p>
 
         </div>
 
@@ -16,11 +20,12 @@
 
     <div class="hover-trigger relative">
 
-        <img src="/static/images/info.png" alt="info" width="24px" class="cursor-pointer"/>
+        <svg class="svg fill-black stroke-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <path d="M13 17h-2v-6h2v6zm0-8h-2V7h2v2z" stroke="none"/>
+            <path fill="none" stroke="current-color" stroke-miterlimit="10" stroke-width="2" d="M12 3a9 9 0 100 18 9 9 0 100-18z"/>
+        </svg>
 
-        {# info-card #}
         {% include "sections/info-card.njk" %}
-        {# info-card #}
 
         <div class="absolute tooltip"></div>
 
