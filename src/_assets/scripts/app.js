@@ -201,6 +201,12 @@ const scrollReveal = ScrollReveal({
 	delay: 100,
 	scale: 0.9
 });
+scrollReveal.reveal(".reveal-1");
+scrollReveal.reveal(".reveal-2", { delay: 200 });
+scrollReveal.reveal(".reveal-3", { delay: 300 });
+scrollReveal.reveal(".reveal-4", { delay: 400 });
+scrollReveal.reveal(".reveal-5", { delay: 500 });
+scrollReveal.reveal(".reveal-6", { delay: 600 });
 scrollReveal.reveal(revealElements);
 scrollReveal.reveal(".reveal-right", {
 	origin: "right",

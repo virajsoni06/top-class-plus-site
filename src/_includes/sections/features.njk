@@ -8,7 +8,7 @@
 
 			{% for item in feature.features %}
 
-				<div class="flex flex-col justify-start relative bg-lightCyan a-vp:w-11/12 d-vp:max-w-featureCard px-2 pt-6 pb-5 reveal">
+				<div class="flex flex-col justify-start relative bg-lightCyan a-vp:w-11/12 d-vp:max-w-featureCard px-2 pt-6 pb-5 reveal-{{ loop.index }}">
 
 					<p class="text-center font-bold font-merri text-epsilon">{{ item.title }}</p>
 
