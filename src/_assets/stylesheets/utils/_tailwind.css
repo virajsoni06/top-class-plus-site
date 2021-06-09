@@ -43,22 +43,34 @@
 	.tooltip {
 		@apply hidden;
 	}
-	.hover-trigger:hover .hover-target {
-		@apply block;
-		top: 35px;
-		right: 12px;
-	}
 	.hover-trigger:hover .svg {
 		@apply fill-turquoise stroke-turquoise duration-100 ease-in-out;
+	}
+	.hover-trigger:hover .hover-target {
+		@apply block;
+		left: 35px;
+		top: 10px;
 	}
 	.hover-trigger:hover .tooltip {
 		@apply h-0 w-0 block;
 		border-top: 10px solid transparent;
 		border-bottom: 10px solid transparent;
 		border-right: 10px solid #39cccc;
-		transform: rotate(225deg);
-		top: 27px;
-		left: 3px;
+		transform: rotate(130deg);
+		top: 3.2px;
+		left: 32px;
+	}
+	@media (max-width: 768px) {
+		.hover-trigger:hover .hover-target {
+			top: 35px;
+			right: 12px;
+			left: -168px;
+		}
+		.hover-trigger:hover .tooltip {
+			transform: rotate(225deg);
+			top: 27px;
+			left: 3px;
+		}
 	}
 	.check-container {
 		@apply relative transition-all duration-100 ease-in-out cursor-pointer;
