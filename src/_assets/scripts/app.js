@@ -98,11 +98,16 @@ getSamplesButton?.addEventListener("click", function() {
 });
 
 // opening purchase modal
-purchaseButton?.addEventListener("click", function() {
-	if (!purchaseModal?.classList.contains("show")) {
-		purchaseModal?.classList.add("show");
-	}
-});
+// purchaseButton?.addEventListener("click", function() {
+// 	if (!purchaseModal?.classList.contains("show")) {
+// 		purchaseModal?.classList.add("show");
+// 	}
+// });
+
+console.log(
+	"jinglis",
+	document.querySelector(".paddle_button").getAttribute("data-product")
+);
 
 // closing the modal on click close button
 closeModal?.forEach(function(item) {
