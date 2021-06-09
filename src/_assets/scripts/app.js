@@ -13,6 +13,7 @@ const selectCountryContainer = document.querySelector(".country-container");
 const selectedCountry = document.querySelector(".country-selected");
 const optionCountry = document.querySelectorAll(".country-option");
 const subscribeText = document.querySelector(".subscribe-text");
+const checkInboxText = document.querySelector(".check-inbox");
 
 const getSamplesButton = document.querySelector(".btn-get-samples");
 const moveToPurchaseButton = document.querySelectorAll(".btn-to-purchase");
@@ -88,9 +89,12 @@ optionCountry?.forEach(function(country) {
 
 // opening samples modal
 getSamplesButton?.addEventListener("click", function() {
-	if (!sampleModal?.classList.contains("show")) {
+	if (getSampleForm?.classList.contains("hidden"))
+		getSampleForm.classList.remove("hidden");
+	if (!checkInboxText?.classList.contains("hidden"))
+		checkInboxText.classList.add("hidden");
+	if (!sampleModal?.classList.contains("show"))
 		sampleModal?.classList.add("show");
-	}
 });
 
 // opening purchase modal
@@ -167,6 +171,8 @@ getSampleForm?.addEventListener("submit", function(e) {
 				bento.view();
 			});
 		}
+		getSampleForm.classList.add("hidden");
+		checkInboxText?.classList.remove("hidden");
 	}
 });
 
