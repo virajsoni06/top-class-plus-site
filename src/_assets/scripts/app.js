@@ -32,6 +32,30 @@ const orderCompleteModal = document.querySelector(".order-complete-modal");
 const getSampleForm = document.getElementById("get-sample-form");
 const subscribeNewsletterForm = document.getElementById("newsletter-form");
 
+document.addEventListener("snipcart.ready", () => {
+	worksheetItem?.forEach(function(item) {
+		item.addEventListener("click", function() {
+			if (!item?.classList.contains("selected")) {
+				item.classList.add("selected");
+				item.classList.add("snipcart-add-item");
+				checkbox?.forEach(function(check) {
+					if (item?.contains(check)) {
+						check.classList.add("checked");
+					}
+				});
+			} else {
+				item.classList.remove("selected");
+				item.classList.remove("snipcart-add-item");
+				checkbox?.forEach(function(check) {
+					if (item?.contains(check)) {
+						check.classList.remove("checked");
+					}
+				});
+			}
+		});
+	});
+});
+
 // avoid restoring scroll position on page revisit
 if ("scrollRestoration" in history) {
 	history.scrollRestoration = "manual";
@@ -56,25 +80,25 @@ selectCountryContainer?.addEventListener("click", function(e) {
 });
 
 // setting selected styles for worksheet item
-worksheetItem?.forEach(function(item) {
-	item.addEventListener("click", function() {
-		if (!item?.classList.contains("selected")) {
-			item.classList.add("selected");
-			checkbox?.forEach(function(check) {
-				if (item?.contains(check)) {
-					check.classList.add("checked");
-				}
-			});
-		} else {
-			item.classList.remove("selected");
-			checkbox?.forEach(function(check) {
-				if (item?.contains(check)) {
-					check.classList.remove("checked");
-				}
-			});
-		}
-	});
-});
+// worksheetItem?.forEach(function(item) {
+// 	item.addEventListener("click", function() {
+// 		if (!item?.classList.contains("selected")) {
+// 			item.classList.add("selected");
+// 			checkbox?.forEach(function(check) {
+// 				if (item?.contains(check)) {
+// 					check.classList.add("checked");
+// 				}
+// 			});
+// 		} else {
+// 			item.classList.remove("selected");
+// 			checkbox?.forEach(function(check) {
+// 				if (item?.contains(check)) {
+// 					check.classList.remove("checked");
+// 				}
+// 			});
+// 		}
+// 	});
+// });
 
 // setting selected country
 optionCountry?.forEach(function(country) {
