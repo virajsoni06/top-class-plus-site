@@ -104,11 +104,6 @@ getSamplesButton?.addEventListener("click", function() {
 // 	}
 // });
 
-console.log(
-	"jinglis",
-	document.querySelector(".paddle_button").getAttribute("data-product")
-);
-
 // closing the modal on click close button
 closeModal?.forEach(function(item) {
 	item.addEventListener("click", function() {
