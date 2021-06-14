@@ -176,6 +176,10 @@ subscribeNewsletterForm?.addEventListener("submit", function(e) {
 // SNIPCART
 /////////////////////
 document.addEventListener("snipcart.ready", () => {
+	// update cart currency based on user location on initial page load
+	let countryName = selectedCountry?.innerText;
+	updatedCurrencyOnSelect(countryName, currency, Snipcart);
+
 	// add to cart on select worksheet item
 	worksheetItem?.forEach(function(item) {
 		item.addEventListener("click", function() {
