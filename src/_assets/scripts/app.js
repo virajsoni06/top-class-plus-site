@@ -32,6 +32,13 @@ const orderCompleteModal = document.querySelector(".order-complete-modal");
 const getSampleForm = document.getElementById("get-sample-form");
 const subscribeNewsletterForm = document.getElementById("newsletter-form");
 
+if (typeof bento$ != "undefined") {
+	bento$(function() {
+		bento.view();
+		bento.autofill();
+	});
+}
+
 document.addEventListener("snipcart.ready", () => {
 	worksheetItem?.forEach(function(item) {
 		item.addEventListener("click", function() {
@@ -189,8 +196,8 @@ getSampleForm?.addEventListener("submit", function(e) {
 	if (name && email) {
 		if (typeof bento$ != "undefined") {
 			bento$(function() {
-				// bento.identify(email);
-				bento.updateFields({ first_name: name });
+				bento.identify(email);
+				bento.updateFields({ name: name });
 				bento.tag("sample");
 				bento.view();
 			});
@@ -209,7 +216,7 @@ subscribeNewsletterForm?.addEventListener("submit", function(e) {
 	if (email) {
 		if (typeof bento$ != "undefined") {
 			bento$(function() {
-				// bento.identify(email);
+				bento.identify(email);
 				bento.tag("newsletter");
 				bento.view();
 			});
