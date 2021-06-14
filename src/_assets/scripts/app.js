@@ -19,7 +19,7 @@ const getSamplesButton = document.querySelector(".btn-get-samples");
 const moveToPurchaseButton = document.querySelectorAll(".btn-to-purchase");
 const payButton = document.querySelector(".btn-pay");
 const closeButton = document.querySelectorAll(".btn-close");
-// const purchaseButton = document.querySelector(".btn-purchase");
+const purchaseButton = document.querySelector(".btn-purchase");
 // const subscribeButton = document.querySelector(".btn-subscribe");
 
 const commonModal = document.querySelectorAll(".modal");
@@ -31,6 +31,9 @@ const orderCompleteModal = document.querySelector(".order-complete-modal");
 
 const getSampleForm = document.getElementById("get-sample-form");
 const subscribeNewsletterForm = document.getElementById("newsletter-form");
+
+let ARRAY_OF_ITEMS = [];
+
 // avoid restoring scroll position on page revisit
 if ("scrollRestoration" in history) {
 	history.scrollRestoration = "manual";
@@ -71,13 +74,6 @@ getSamplesButton?.addEventListener("click", function() {
 	if (!sampleModal?.classList.contains("show"))
 		sampleModal?.classList.add("show");
 });
-
-// opening purchase modal
-// purchaseButton?.addEventListener("click", function() {
-//  if (!purchaseModal?.classList.contains("show")) {
-//      purchaseModal?.classList.add("show");
-//  }
-// });
 
 // closing the modal on click close button
 closeModal?.forEach(function(item) {
@@ -176,29 +172,43 @@ subscribeNewsletterForm?.addEventListener("submit", function(e) {
 // SNIPCART
 /////////////////////
 document.addEventListener("snipcart.ready", () => {
+	let IS_REMOVING = false;
 	// update cart currency based on user location on initial page load
 	let countryName = selectedCountry?.innerText;
 	updatedCurrencyOnSelect(countryName, currency, Snipcart);
 
 	// add to cart on select worksheet item
 	worksheetItem?.forEach(function(item) {
-		item.addEventListener("click", function() {
+		item.addEventListener("click", async function() {
 			if (!item?.classList.contains("selected")) {
 				item.classList.add("selected");
-				item.classList.add("snipcart-add-item");
 				checkbox?.forEach(function(check) {
 					if (item?.contains(check)) {
 						check.classList.add("checked");
 					}
 				});
+				item.classList.add("snipcart-add-item");
 			} else {
 				item.classList.remove("selected");
-				item.classList.remove("snipcart-add-item");
 				checkbox?.forEach(function(check) {
 					if (item?.contains(check)) {
 						check.classList.remove("checked");
 					}
 				});
+				item.classList.remove("snipcart-add-item");
+				ARRAY_OF_ITEMS = Snipcart.store.getState().cart.items.items;
+				let index = ARRAY_OF_ITEMS.findIndex(
+					elem => elem.id === item.getAttribute("data-item-id")
+				);
+				IS_REMOVING = true;
+				try {
+					await Snipcart.api.cart.items.remove(
+						ARRAY_OF_ITEMS[index].uniqueId.toString().trim()
+					);
+				} catch (err) {
+					return;
+				}
+				IS_REMOVING = false;
 			}
 		});
 	});
@@ -212,6 +222,30 @@ document.addEventListener("snipcart.ready", () => {
 			updatedCurrencyOnSelect(countryName, currency, Snipcart);
 			dropdown?.classList.remove("show");
 		});
+	});
+
+	// open cart/checkout
+	purchaseButton?.addEventListener("click", function() {
+		if (IS_REMOVING) return;
+		Snipcart.api.theme.cart.open();
+	});
+
+	// remove selected states when navigate back to home page
+	Snipcart.events.on("theme.routechanged", routesChange => {
+		if (routesChange.from !== "/" && routesChange.to === "/") {
+			worksheetItem?.forEach(function(item) {
+				if (item.classList.contains("selected")) {
+					item.classList.remove("selected");
+					checkbox?.forEach(function(check) {
+						if (item?.contains(check)) {
+							check.classList.remove("checked");
+						}
+					});
+				}
+				if (item.classList.contains("snipcart-add-item"))
+					item.classList.remove("snipcart-add-item");
+			});
+		}
 	});
 });
 
