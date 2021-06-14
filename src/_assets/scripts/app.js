@@ -17,55 +17,31 @@ const checkInboxText = document.querySelector(".check-inbox");
 
 const getSamplesButton = document.querySelector(".btn-get-samples");
 const moveToPurchaseButton = document.querySelectorAll(".btn-to-purchase");
-const purchaseButton = document.querySelector(".btn-purchase");
 const payButton = document.querySelector(".btn-pay");
 const closeButton = document.querySelectorAll(".btn-close");
-const subscribeButton = document.querySelector(".btn-subscribe");
+// const purchaseButton = document.querySelector(".btn-purchase");
+// const subscribeButton = document.querySelector(".btn-subscribe");
 
 const commonModal = document.querySelectorAll(".modal");
 const closeModal = document.querySelectorAll(".close-modal");
 const sampleModal = document.querySelector(".sample-modal");
-const purchaseModal = document.querySelector(".purchase-modal");
-const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 const orderCompleteModal = document.querySelector(".order-complete-modal");
+// const purchaseModal = document.querySelector(".purchase-modal");
+// const worksheetInfoModal = document.querySelector(".worksheet-info-modal");
 
 const getSampleForm = document.getElementById("get-sample-form");
 const subscribeNewsletterForm = document.getElementById("newsletter-form");
+// avoid restoring scroll position on page revisit
+if ("scrollRestoration" in history) {
+	history.scrollRestoration = "manual";
+}
 
+// null check on bento initial page load
 if (typeof bento$ != "undefined") {
 	bento$(function() {
 		bento.view();
 		bento.autofill();
 	});
-}
-
-document.addEventListener("snipcart.ready", () => {
-	worksheetItem?.forEach(function(item) {
-		item.addEventListener("click", function() {
-			if (!item?.classList.contains("selected")) {
-				item.classList.add("selected");
-				item.classList.add("snipcart-add-item");
-				checkbox?.forEach(function(check) {
-					if (item?.contains(check)) {
-						check.classList.add("checked");
-					}
-				});
-			} else {
-				item.classList.remove("selected");
-				item.classList.remove("snipcart-add-item");
-				checkbox?.forEach(function(check) {
-					if (item?.contains(check)) {
-						check.classList.remove("checked");
-					}
-				});
-			}
-		});
-	});
-});
-
-// avoid restoring scroll position on page revisit
-if ("scrollRestoration" in history) {
-	history.scrollRestoration = "manual";
 }
 
 // fetching user geo location in order to display currency symbol
@@ -86,38 +62,6 @@ selectCountryContainer?.addEventListener("click", function(e) {
 	}
 });
 
-// setting selected styles for worksheet item
-// worksheetItem?.forEach(function(item) {
-// 	item.addEventListener("click", function() {
-// 		if (!item?.classList.contains("selected")) {
-// 			item.classList.add("selected");
-// 			checkbox?.forEach(function(check) {
-// 				if (item?.contains(check)) {
-// 					check.classList.add("checked");
-// 				}
-// 			});
-// 		} else {
-// 			item.classList.remove("selected");
-// 			checkbox?.forEach(function(check) {
-// 				if (item?.contains(check)) {
-// 					check.classList.remove("checked");
-// 				}
-// 			});
-// 		}
-// 	});
-// });
-
-// setting selected country
-optionCountry?.forEach(function(country) {
-	country?.addEventListener("click", function() {
-		let countryName = country.innerText;
-		let selectedContent = country.innerHTML;
-		selectedCountry.innerHTML = selectedContent;
-		updatedCurrencyOnSelect(countryName, currency);
-		dropdown?.classList.remove("show");
-	});
-});
-
 // opening samples modal
 getSamplesButton?.addEventListener("click", function() {
 	if (getSampleForm?.classList.contains("hidden"))
@@ -130,9 +74,9 @@ getSamplesButton?.addEventListener("click", function() {
 
 // opening purchase modal
 // purchaseButton?.addEventListener("click", function() {
-// 	if (!purchaseModal?.classList.contains("show")) {
-// 		purchaseModal?.classList.add("show");
-// 	}
+//  if (!purchaseModal?.classList.contains("show")) {
+//      purchaseModal?.classList.add("show");
+//  }
 // });
 
 // closing the modal on click close button
@@ -160,7 +104,7 @@ moveToPurchaseButton?.forEach(function(item) {
 	});
 });
 
-// display thank you/ order complete modal after successful pay
+// display thank you / order complete modal after successful pay
 payButton?.addEventListener("click", function() {
 	commonModal?.forEach(function(modal) {
 		if (modal?.classList.contains("show")) modal.classList.remove("show");
@@ -226,6 +170,45 @@ subscribeNewsletterForm?.addEventListener("submit", function(e) {
 			subscribeNewsletterForm.style.display = "none";
 		}
 	}
+});
+
+/////////////////////
+// SNIPCART
+/////////////////////
+document.addEventListener("snipcart.ready", () => {
+	// add to cart on select worksheet item
+	worksheetItem?.forEach(function(item) {
+		item.addEventListener("click", function() {
+			if (!item?.classList.contains("selected")) {
+				item.classList.add("selected");
+				item.classList.add("snipcart-add-item");
+				checkbox?.forEach(function(check) {
+					if (item?.contains(check)) {
+						check.classList.add("checked");
+					}
+				});
+			} else {
+				item.classList.remove("selected");
+				item.classList.remove("snipcart-add-item");
+				checkbox?.forEach(function(check) {
+					if (item?.contains(check)) {
+						check.classList.remove("checked");
+					}
+				});
+			}
+		});
+	});
+
+	// update cart currency on selected country
+	optionCountry?.forEach(function(country) {
+		country?.addEventListener("click", function() {
+			let countryName = country.innerText;
+			let selectedContent = country.innerHTML;
+			selectedCountry.innerHTML = selectedContent;
+			updatedCurrencyOnSelect(countryName, currency, Snipcart);
+			dropdown?.classList.remove("show");
+		});
+	});
 });
 
 /////////////////////
