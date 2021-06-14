@@ -7,9 +7,7 @@ const getUserLocation = async () => {
 		return err;
 	}
 };
-
 export default getUserLocation;
-
 export const updateCurrencySymbolOnLoad = (element, location) => {
 	const countryName = document.querySelector(".country-name");
 	const countryFlag = document.querySelector(".country-flag");
@@ -48,19 +46,17 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 		});
 	}
 };
-
-export const updatedCurrencyOnSelect = (country, element) => {
-	if (country === "United States") {
-		element.forEach(function(item) {
+export const updatedCurrencyOnSelect = (country, element, snipcart) => {
+	element.forEach(function(item) {
+		if (country === "United States") {
 			item.innerHTML = "$";
-		});
-	} else if (country === "Great Britain") {
-		element.forEach(function(item) {
+			snipcart.api.session.setCurrency("usd");
+		} else if (country === "Great Britain") {
 			item.innerHTML = "£";
-		});
-	} else if (country === "India") {
-		element.forEach(function(item) {
+			snipcart.api.session.setCurrency("eur");
+		} else if (country === "India") {
 			item.innerHTML = "₹";
-		});
-	}
+			snipcart.api.session.setCurrency("inr");
+		}
+	});
 };
