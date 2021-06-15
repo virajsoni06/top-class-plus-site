@@ -91,7 +91,7 @@
 	}
 	.btn-disabled,
 	.btn-disabled:hover {
-		@apply bg-turquoise pointer-events-none cursor-wait opacity-50;
+		@apply bg-turquoise text-white pointer-events-none cursor-wait opacity-50;
 	}
 	/* overriding snipcart default styles */
 	.snipcart-item-quantity__quantity,
