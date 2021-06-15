@@ -172,7 +172,6 @@ subscribeNewsletterForm?.addEventListener("submit", function(e) {
 // SNIPCART
 /////////////////////
 document.addEventListener("snipcart.ready", () => {
-	let IS_REMOVING = false;
 	// update cart currency based on user location on initial page load
 	let countryName = selectedCountry?.innerText;
 	updatedCurrencyOnSelect(countryName, currency, Snipcart);
@@ -187,7 +186,6 @@ document.addEventListener("snipcart.ready", () => {
 						check.classList.add("checked");
 					}
 				});
-				item.classList.add("snipcart-add-item");
 			} else {
 				item.classList.remove("selected");
 				checkbox?.forEach(function(check) {
@@ -195,20 +193,6 @@ document.addEventListener("snipcart.ready", () => {
 						check.classList.remove("checked");
 					}
 				});
-				item.classList.remove("snipcart-add-item");
-				ARRAY_OF_ITEMS = Snipcart.store.getState().cart.items.items;
-				let index = ARRAY_OF_ITEMS.findIndex(
-					elem => elem.id === item.getAttribute("data-item-id")
-				);
-				IS_REMOVING = true;
-				try {
-					await Snipcart.api.cart.items.remove(
-						ARRAY_OF_ITEMS[index].uniqueId.toString().trim()
-					);
-				} catch (err) {
-					return;
-				}
-				IS_REMOVING = false;
 			}
 		});
 	});
@@ -226,8 +210,18 @@ document.addEventListener("snipcart.ready", () => {
 
 	// open cart/checkout
 	purchaseButton?.addEventListener("click", function() {
-		if (IS_REMOVING) return;
-		Snipcart.api.theme.cart.open();
+		purchaseButton.classList.add("btn-disabled");
+		let array = [];
+		worksheetItem?.forEach(function(item) {
+			if (item?.classList.contains("selected")) {
+				let object = getCartItemAttributes(item);
+				array.push(object);
+			}
+		});
+		addItemsToCart(array).then(_ => {
+			purchaseButton.classList.remove("btn-disabled");
+			Snipcart.api.theme.cart.open();
+		});
 	});
 
 	// remove selected states when navigate back to home page
@@ -242,11 +236,36 @@ document.addEventListener("snipcart.ready", () => {
 						}
 					});
 				}
-				if (item.classList.contains("snipcart-add-item"))
-					item.classList.remove("snipcart-add-item");
 			});
 		}
 	});
+
+	async function addItemsToCart(array) {
+		try {
+			for (let i = 0; i < array.length; i++) {
+				await Snipcart.api.cart.items.add(array[i]);
+			}
+		} catch (error) {
+			return;
+		}
+	}
+
+	function getCartItemAttributes(item) {
+		return {
+			id: item.getAttribute("data-item-id"),
+			name: item.getAttribute("data-item-name"),
+			price: {
+				eur: 99.0,
+				usd: 129.0,
+				inr: 7234.0
+			},
+			url: item.getAttribute("data-item-url"),
+			image: item.getAttribute("data-item-image"),
+			description: item.getAttribute("data-item-description"),
+			quantity: 1,
+			maxQuantity: 1
+		};
+	}
 });
 
 /////////////////////
