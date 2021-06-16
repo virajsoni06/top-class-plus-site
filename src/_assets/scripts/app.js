@@ -251,14 +251,11 @@ document.addEventListener("snipcart.ready", () => {
 	}
 
 	function getCartItemAttributes(item) {
+		let price = JSON.parse(item.getAttribute("data-item-price"));
 		return {
 			id: item.getAttribute("data-item-id"),
 			name: item.getAttribute("data-item-name"),
-			price: {
-				eur: 99.0,
-				usd: 129.0,
-				inr: 7234.0
-			},
+			price: price,
 			url: item.getAttribute("data-item-url"),
 			image: item.getAttribute("data-item-image"),
 			description: item.getAttribute("data-item-description"),
