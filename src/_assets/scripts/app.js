@@ -226,17 +226,11 @@ document.addEventListener("snipcart.ready", () => {
 
 	// remove selected states when navigate back to home page
 	Snipcart.events.on("theme.routechanged", routesChange => {
+		if (routesChange.from === "/" && routesChange.to !== "/") {
+			// if cart is opened
+		}
 		if (routesChange.from !== "/" && routesChange.to === "/") {
-			worksheetItem?.forEach(function(item) {
-				if (item.classList.contains("selected")) {
-					item.classList.remove("selected");
-					checkbox?.forEach(function(check) {
-						if (item?.contains(check)) {
-							check.classList.remove("checked");
-						}
-					});
-				}
-			});
+			// if cart is closed
 		}
 	});
 

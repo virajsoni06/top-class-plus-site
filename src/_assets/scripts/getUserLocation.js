@@ -8,6 +8,7 @@ const getUserLocation = async () => {
 	}
 };
 export default getUserLocation;
+
 export const updateCurrencySymbolOnLoad = (element, location) => {
 	const countryName = document.querySelector(".country-name");
 	const countryFlag = document.querySelector(".country-flag");
@@ -46,6 +47,7 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 		});
 	}
 };
+
 export const updatedCurrencyOnSelect = (country, element, snipcart) => {
 	element.forEach(function(item) {
 		if (country === "United States") {
