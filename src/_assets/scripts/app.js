@@ -32,8 +32,6 @@ const orderCompleteModal = document.querySelector(".order-complete-modal");
 const getSampleForm = document.getElementById("get-sample-form");
 const subscribeNewsletterForm = document.getElementById("newsletter-form");
 
-let ARRAY_OF_ITEMS = [];
-
 // avoid restoring scroll position on page revisit
 if ("scrollRestoration" in history) {
 	history.scrollRestoration = "manual";
