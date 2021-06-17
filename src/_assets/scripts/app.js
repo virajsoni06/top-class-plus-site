@@ -172,11 +172,7 @@ subscribeNewsletterForm?.addEventListener("submit", function(e) {
 // SNIPCART
 /////////////////////
 document.addEventListener("snipcart.ready", () => {
-	// update cart currency based on user location on initial page load
-	let countryName = selectedCountry?.innerText;
-	updatedCurrencyOnSelect(countryName, currency, Snipcart);
-
-	// add to cart on select worksheet item
+	// select worksheet item
 	worksheetItem?.forEach(function(item) {
 		item.addEventListener("click", async function() {
 			if (!item?.classList.contains("selected")) {
@@ -210,6 +206,7 @@ document.addEventListener("snipcart.ready", () => {
 
 	// open cart/checkout
 	purchaseButton?.addEventListener("click", function() {
+		updateCartCurrency();
 		purchaseButton.classList.add("btn-disabled");
 		let array = [];
 		worksheetItem?.forEach(function(item) {
@@ -256,6 +253,12 @@ document.addEventListener("snipcart.ready", () => {
 			quantity: 1,
 			maxQuantity: 1
 		};
+	}
+
+	function updateCartCurrency() {
+		// update cart currency based on user location on initial page load
+		let countryName = selectedCountry?.innerText;
+		updatedCurrencyOnSelect(countryName, currency, Snipcart);
 	}
 });
 
