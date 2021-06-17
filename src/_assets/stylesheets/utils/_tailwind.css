@@ -100,4 +100,9 @@
 		opacity: 0 !important;
 		pointer-events: none !important;
 	}
+	/* .hide {
+		visibility: hidden !important;
+		opacity: 0 !important;
+		pointer-events: none !important;
+	} */
 }
