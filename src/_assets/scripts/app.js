@@ -255,8 +255,8 @@ document.addEventListener("snipcart.ready", () => {
 		};
 	}
 
+	// update cart currency based on user location on initial page load
 	function updateCartCurrency() {
-		// update cart currency based on user location on initial page load
 		let countryName = selectedCountry?.innerText;
 		updatedCurrencyOnSelect(countryName, currency, Snipcart);
 	}

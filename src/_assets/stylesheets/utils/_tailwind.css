@@ -94,8 +94,8 @@
 		@apply bg-turquoise text-white pointer-events-none cursor-wait opacity-50;
 	}
 	/* overriding snipcart default styles */
-	.snipcart-item-quantity__quantity,
-	.snipcart-item-quantity__label {
+	.snipcart-item-quantity__quantity.snipcart__font--std,
+	.snipcart-item-quantity__label.snipcart__font--tiny {
 		visibility: hidden !important;
 		opacity: 0 !important;
 		pointer-events: none !important;
