@@ -69,9 +69,9 @@ const updateWorksheetPrices = country => {
 		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
 		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
 		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
-		{ eur: "99.00", usd: "129.00", inr: "7236.00" },
 		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
-		{ eur: "99.00", usd: "129.00", inr: "9234.00" },
+		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
+		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
 		{ eur: "99.00", usd: "129.00", inr: "7234.00" }
 	];
 	itemPrice?.forEach(function(item, index) {
