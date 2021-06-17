@@ -5,7 +5,7 @@ module.exports = {
 	author: "TranslateZ",
 	meta_data: {
 		// twitter: "",
-		default_social_image: "/static/images/"
+		default_social_image: "/static/default_social_image.png"
 	},
 	env: process.env.ELEVENTY_ENV === "production"
 };
