@@ -210,7 +210,9 @@ document.addEventListener("snipcart.ready", () => {
 		worksheetItem?.forEach(function(item) {
 			if (item?.classList.contains("selected")) {
 				let object = getCartItemAttributes(item);
-				array.push(object);
+				let cartItems = Snipcart.store.getState().cart.items.items;
+				let itemExists = cartItems.findIndex(e => e.id === object.id);
+				if (itemExists === -1) array.push(object);
 			}
 		});
 		addItemsToCart(array).then(_ => {
