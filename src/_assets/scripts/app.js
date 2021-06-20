@@ -221,7 +221,7 @@ document.addEventListener("snipcart.ready", () => {
 		});
 	});
 
-	// remove selected states when navigate back to home page
+	// events to perform on route change
 	Snipcart.events.on("theme.routechanged", routesChange => {
 		if (routesChange.from === "/" && routesChange.to !== "/") {
 			// if cart is opened
