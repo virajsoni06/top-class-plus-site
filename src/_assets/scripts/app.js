@@ -259,6 +259,7 @@ document.addEventListener("snipcart.ready", () => {
 
 	// update cart currency based on user location on initial page load
 	function updateCartCurrency() {
+		console.log("jinglis executed");
 		let countryName = selectedCountry?.innerText;
 		updatedCurrencyOnSelect(countryName, currency, Snipcart);
 	}
