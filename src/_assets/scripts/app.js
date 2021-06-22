@@ -221,12 +221,10 @@ document.addEventListener("snipcart.ready", () => {
 			let object = getCartItemAttributes(item);
 			let itemExists = cartItems.findIndex(e => e.id === object.id);
 			if (item?.classList.contains("selected")) {
-				item.classList.add("snipcart-add-item");
 				if (itemExists == -1) {
 					itemsToBeUpdated.push({ toRemove: false, item: object });
 				}
 			} else {
-				item.classList.remove("snipcart-add-item");
 				if (itemExists >= 0) {
 					itemsToBeUpdated.push({
 						toRemove: true,
