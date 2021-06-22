@@ -172,10 +172,9 @@ subscribeNewsletterForm?.addEventListener("submit", function(e) {
 document.addEventListener("snipcart.ready", () => {
 	// select worksheet item
 	worksheetItem?.forEach(function(item) {
-		item.addEventListener("click", async function() {
+		item.addEventListener("click", function() {
 			if (!item?.classList.contains("selected")) {
 				item.classList.add("selected");
-				item.classList.add("snipcart-add-item");
 				checkbox?.forEach(function(check) {
 					if (item?.contains(check)) {
 						check.classList.add("checked");
@@ -183,7 +182,6 @@ document.addEventListener("snipcart.ready", () => {
 				});
 			} else {
 				item.classList.remove("selected");
-				item.classList.remove("snipcart-add-item");
 				checkbox?.forEach(function(check) {
 					if (item?.contains(check)) {
 						check.classList.remove("checked");
@@ -204,20 +202,41 @@ document.addEventListener("snipcart.ready", () => {
 		});
 	});
 
+	// Snipcart.events.on("item.added", cartItem => {
+	// 	if (cartItem) {
+	// 		purchaseButton.classList.remove("btn-disabled");
+	// 	} else {
+	// 		purchaseButton.classList.add("btn-disabled");
+	// 	}
+	// });
+
 	// open cart/checkout
 	purchaseButton?.addEventListener("click", function() {
 		updateCartCurrency();
 		purchaseButton.classList.add("btn-disabled");
-		let array = [];
+		let cartItems = Snipcart.store.getState().cart.items.items;
+		let itemsToBeUpdated = [];
+
 		worksheetItem?.forEach(function(item) {
+			let object = getCartItemAttributes(item);
+			let itemExists = cartItems.findIndex(e => e.id === object.id);
 			if (item?.classList.contains("selected")) {
-				let object = getCartItemAttributes(item);
-				let cartItems = Snipcart.store.getState().cart.items.items;
-				let itemExists = cartItems.findIndex(e => e.id === object.id);
-				if (itemExists === -1) array.push(object);
+				item.classList.add("snipcart-add-item");
+				if (itemExists == -1) {
+					itemsToBeUpdated.push({ toRemove: false, item: object });
+				}
+			} else {
+				item.classList.remove("snipcart-add-item");
+				if (itemExists >= 0) {
+					itemsToBeUpdated.push({
+						toRemove: true,
+						item: cartItems[itemExists].uniqueId
+					});
+				}
 			}
 		});
-		addItemsToCart(array).then(_ => {
+
+		updateItemsInCart(itemsToBeUpdated).then(_ => {
 			purchaseButton.classList.remove("btn-disabled");
 			Snipcart.api.theme.cart.open();
 		});
@@ -233,10 +252,14 @@ document.addEventListener("snipcart.ready", () => {
 		}
 	});
 
-	async function addItemsToCart(array) {
+	async function updateItemsInCart(array) {
 		try {
 			for (let i = 0; i < array.length; i++) {
-				await Snipcart.api.cart.items.add(array[i]);
+				if (array[i].toRemove === true) {
+					await Snipcart.api.cart.items.remove(array[i].item.trim());
+				} else {
+					await Snipcart.api.cart.items.add(array[i].item);
+				}
 			}
 		} catch (error) {
 			return;
@@ -253,13 +276,13 @@ document.addEventListener("snipcart.ready", () => {
 			image: item.getAttribute("data-item-image"),
 			description: item.getAttribute("data-item-description"),
 			quantity: 1,
-			maxQuantity: 1
+			maxQuantity: 1,
+			minQuantity: 1
 		};
 	}
 
 	// update cart currency based on user location on initial page load
 	function updateCartCurrency() {
-		console.log("jinglis executed");
 		let countryName = selectedCountry?.innerText;
 		updatedCurrencyOnSelect(countryName, currency, Snipcart);
 	}
