@@ -175,6 +175,7 @@ document.addEventListener("snipcart.ready", () => {
 		item.addEventListener("click", async function() {
 			if (!item?.classList.contains("selected")) {
 				item.classList.add("selected");
+				item.classList.add("snipcart-add-item");
 				checkbox?.forEach(function(check) {
 					if (item?.contains(check)) {
 						check.classList.add("checked");
@@ -182,6 +183,7 @@ document.addEventListener("snipcart.ready", () => {
 				});
 			} else {
 				item.classList.remove("selected");
+				item.classList.remove("snipcart-add-item");
 				checkbox?.forEach(function(check) {
 					if (item?.contains(check)) {
 						check.classList.remove("checked");
