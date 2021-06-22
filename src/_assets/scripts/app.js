@@ -202,14 +202,6 @@ document.addEventListener("snipcart.ready", () => {
 		});
 	});
 
-	// Snipcart.events.on("item.added", cartItem => {
-	// 	if (cartItem) {
-	// 		purchaseButton.classList.remove("btn-disabled");
-	// 	} else {
-	// 		purchaseButton.classList.add("btn-disabled");
-	// 	}
-	// });
-
 	// open cart/checkout
 	purchaseButton?.addEventListener("click", function() {
 		updateCartCurrency();
@@ -221,16 +213,7 @@ document.addEventListener("snipcart.ready", () => {
 			let object = getCartItemAttributes(item);
 			let itemExists = cartItems.findIndex(e => e.id === object.id);
 			if (item?.classList.contains("selected")) {
-				if (itemExists == -1) {
-					itemsToBeUpdated.push({ toRemove: false, item: object });
-				}
-			} else {
-				if (itemExists >= 0) {
-					itemsToBeUpdated.push({
-						toRemove: true,
-						item: cartItems[itemExists].uniqueId
-					});
-				}
+				if (itemExists == -1) itemsToBeUpdated.push(object);
 			}
 		});
 
@@ -253,11 +236,7 @@ document.addEventListener("snipcart.ready", () => {
 	async function updateItemsInCart(array) {
 		try {
 			for (let i = 0; i < array.length; i++) {
-				if (array[i].toRemove === true) {
-					await Snipcart.api.cart.items.remove(array[i].item.trim());
-				} else {
-					await Snipcart.api.cart.items.add(array[i].item);
-				}
+				await Snipcart.api.cart.items.add(array[i].item);
 			}
 		} catch (error) {
 			return;
