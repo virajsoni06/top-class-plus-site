@@ -236,8 +236,11 @@ document.addEventListener("snipcart.ready", () => {
 	Snipcart.events.on("cart.confirmed", cartConfirmResponse => {
 		let { items: itemsObject } = cartConfirmResponse;
 		let { items } = itemsObject;
-		for (let i = 0; i < items.length; i++) {
-			console.log("jinglis", items[i]);
+		if (typeof bento$ != "undefined") {
+			bento$(function() {
+				for (let i = 0; i < items.length; i++) bento.tag(item[i].id.toString());
+				bento.view();
+			});
 		}
 	});
 
