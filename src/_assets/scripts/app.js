@@ -236,7 +236,7 @@ document.addEventListener("snipcart.ready", () => {
 	async function updateItemsInCart(array) {
 		try {
 			for (let i = 0; i < array.length; i++) {
-				await Snipcart.api.cart.items.add(array[i].item);
+				await Snipcart.api.cart.items.add(array[i]);
 			}
 		} catch (error) {
 			return;
