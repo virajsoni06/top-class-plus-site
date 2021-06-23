@@ -238,7 +238,8 @@ document.addEventListener("snipcart.ready", () => {
 		let { items } = itemsObject;
 		if (typeof bento$ != "undefined") {
 			bento$(function() {
-				for (let i = 0; i < items.length; i++) bento.tag(item[i].id.toString());
+				for (let i = 0; i < items.length; i++)
+					bento.tag(items[i].id.toString());
 				bento.view();
 			});
 		}
