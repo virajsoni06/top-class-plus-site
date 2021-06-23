@@ -234,7 +234,10 @@ document.addEventListener("snipcart.ready", () => {
 	});
 
 	Snipcart.events.on("cart.confirmed", cartConfirmResponse => {
-		console.log("jinglis", cartConfirmResponse);
+		let { items } = cartConfirmResponse;
+		for (let i = 0; i < items.items.length; i++) {
+			console.log("jinglis", items[i]);
+		}
 	});
 
 	async function updateItemsInCart(array) {
