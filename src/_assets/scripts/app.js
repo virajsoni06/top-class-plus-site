@@ -234,8 +234,9 @@ document.addEventListener("snipcart.ready", () => {
 	});
 
 	Snipcart.events.on("cart.confirmed", cartConfirmResponse => {
-		let { items } = cartConfirmResponse;
-		for (let i = 0; i < items.items.length; i++) {
+		let { items: itemsObject } = cartConfirmResponse;
+		let { items } = itemsObject;
+		for (let i = 0; i < items.length; i++) {
 			console.log("jinglis", items[i]);
 		}
 	});
