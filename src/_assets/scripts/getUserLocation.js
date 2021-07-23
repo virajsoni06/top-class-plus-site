@@ -18,18 +18,21 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 			});
 			updateCountryNameAndFlag(country, "in-flag.svg");
 			updateWorksheetPrices(country);
+			updateMonthlyAndOneTimePrice(country);
 		} else if (country === "United States") {
 			element.forEach(function(item) {
 				item.innerHTML = "$";
 			});
 			updateCountryNameAndFlag(country, "us-flag.svg");
 			updateWorksheetPrices(country);
+			updateMonthlyAndOneTimePrice(country);
 		} else {
 			element.forEach(function(item) {
 				item.innerHTML = "£";
 			});
 			updateCountryNameAndFlag("Great Britain", "gb-flag.svg");
 			updateWorksheetPrices("Great Britain");
+			updateMonthlyAndOneTimePrice("Great Britain");
 		}
 	} else {
 		element.forEach(function(item) {
@@ -37,6 +40,7 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 		});
 		updateCountryNameAndFlag("Great Britain", "gb-flag.svg");
 		updateWorksheetPrices("Great Britain");
+		updateMonthlyAndOneTimePrice("Great Britain");
 	}
 };
 
@@ -61,6 +65,7 @@ export const updatedCurrencyOnSelect = (country, element, snipcart) => {
 		}
 	});
 	updateWorksheetPrices(country);
+	updateMonthlyAndOneTimePrice(country);
 };
 
 const updateWorksheetPrices = country => {
@@ -83,4 +88,42 @@ const updateWorksheetPrices = country => {
 			item.innerHTML = "₹" + priceList[index].inr;
 		}
 	});
+};
+
+const updateMonthlyAndOneTimePrice = country => {
+	const oneTimePrice = document.querySelectorAll(".one-time-price");
+	const pricePerMonth = document.querySelector(".price-per-month");
+
+	const prices = {
+		usd: {
+			monthly: 3,
+			oneTime: 36
+		},
+		eur: {
+			monthly: 2.18,
+			oneTime: 26.2
+		},
+		ind: {
+			monthly: 223.32,
+			oneTime: 2679.9
+		}
+	};
+
+	let monthlyPrice, lifeTimePrice;
+
+	if (country === "United States") {
+		monthlyPrice = prices.usd.monthly;
+		lifeTimePrice = prices.usd.oneTime;
+	} else if (country === "Great Britain") {
+		monthlyPrice = prices.eur.monthly;
+		lifeTimePrice = prices.eur.oneTime;
+	} else if (country === "India") {
+		monthlyPrice = prices.ind.monthly;
+		lifeTimePrice = prices.ind.oneTime;
+	}
+
+	oneTimePrice?.forEach(function(item) {
+		item.innerHTML = lifeTimePrice;
+	});
+	pricePerMonth.innerHTML = monthlyPrice;
 };
