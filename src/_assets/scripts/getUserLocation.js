@@ -66,13 +66,13 @@ export const updatedCurrencyOnSelect = (country, element, snipcart) => {
 const updateWorksheetPrices = country => {
 	const itemPrice = document.querySelectorAll(".worksheet-item .item-price");
 	let priceList = [
-		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
-		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
-		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
-		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
-		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
-		{ eur: "99.00", usd: "129.00", inr: "7234.00" },
-		{ eur: "99.00", usd: "129.00", inr: "7234.00" }
+		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
+		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
+		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
+		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
+		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
+		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
+		{ eur: "72.00", usd: "99.00", inr: "7370.30" }
 	];
 	itemPrice?.forEach(function(item, index) {
 		if (country === "United States") {

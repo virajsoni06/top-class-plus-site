@@ -7,7 +7,7 @@ module.exports = {
 			ageGroup: "Age 5-6 years old",
 
 			dataItemID: "Kindergarten",
-			dataItemPrice: `{"eur": 99.00, "usd": 129.00 , "inr": 7234.00}`,
+			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
@@ -20,7 +20,7 @@ module.exports = {
 			ageGroup: "Age 6-7 years old",
 
 			dataItemID: "grade-1",
-			dataItemPrice: `{"eur": 99.00, "usd": 129.00 , "inr": 7234.00}`,
+			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
@@ -33,7 +33,7 @@ module.exports = {
 			ageGroup: "Age 7-8 years old",
 
 			dataItemID: "grade-2",
-			dataItemPrice: `{"eur": 99.00, "usd": 129.00 , "inr": 7234.00}`,
+			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
@@ -46,7 +46,7 @@ module.exports = {
 			ageGroup: "Age 8-9 years old",
 
 			dataItemID: "grade-3",
-			dataItemPrice: `{"eur": 99.00, "usd": 129.00 , "inr": 7234.00}`,
+			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
@@ -59,7 +59,7 @@ module.exports = {
 			ageGroup: "Age 9-10 years old",
 
 			dataItemID: "grade-4",
-			dataItemPrice: `{"eur": 99.00, "usd": 129.00 , "inr": 7234.00}`,
+			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
@@ -72,7 +72,7 @@ module.exports = {
 			ageGroup: "Age 10-11 years old",
 
 			dataItemID: "grade-5",
-			dataItemPrice: `{"eur": 99.00, "usd": 129.00 , "inr": 7234.00}`,
+			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
@@ -85,7 +85,7 @@ module.exports = {
 			ageGroup: "Age 11-12 years old",
 
 			dataItemID: "grade-6",
-			dataItemPrice: `{"eur": 99.00, "usd": 129.00 , "inr": 7234.00}`,
+			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
