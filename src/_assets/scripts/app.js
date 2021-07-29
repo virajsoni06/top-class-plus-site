@@ -229,7 +229,6 @@ document.addEventListener("snipcart.ready", () => {
 	Snipcart.events.on("theme.routechanged", routesChange => {
 		if (routesChange.from === "/" && routesChange.to !== "/") {
 			// if cart is opened
-			console.log("jinglis opened");
 		}
 		if (routesChange.from !== "/" && routesChange.to === "/") {
 			// if cart is closed
