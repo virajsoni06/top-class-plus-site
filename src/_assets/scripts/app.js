@@ -175,6 +175,7 @@ document.addEventListener("snipcart.ready", () => {
 		item.addEventListener("click", function() {
 			if (!item?.classList.contains("selected")) {
 				item.classList.add("selected");
+				// item.classList.add("snipcart-add-item");
 				checkbox?.forEach(function(check) {
 					if (item?.contains(check)) {
 						check.classList.add("checked");
@@ -182,6 +183,7 @@ document.addEventListener("snipcart.ready", () => {
 				});
 			} else {
 				item.classList.remove("selected");
+				// item.classList.remove("snipcart-add-item");
 				checkbox?.forEach(function(check) {
 					if (item?.contains(check)) {
 						check.classList.remove("checked");
@@ -227,6 +229,7 @@ document.addEventListener("snipcart.ready", () => {
 	Snipcart.events.on("theme.routechanged", routesChange => {
 		if (routesChange.from === "/" && routesChange.to !== "/") {
 			// if cart is opened
+			console.log("jinglis opened");
 		}
 		if (routesChange.from !== "/" && routesChange.to === "/") {
 			// if cart is closed
@@ -264,6 +267,7 @@ document.addEventListener("snipcart.ready", () => {
 			url: item.getAttribute("data-item-url"),
 			image: item.getAttribute("data-item-image"),
 			description: item.getAttribute("data-item-description"),
+			fileGuid: item.getAttribute("data-item-file-guid"),
 			quantity: 1,
 			maxQuantity: 1,
 			minQuantity: 1
