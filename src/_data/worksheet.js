@@ -11,7 +11,8 @@ module.exports = {
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
-			dataItemName: "Kindergarten Bundle"
+			dataItemName: "Kindergarten Bundle",
+			dataItemFileGUID: "63f4465b-b0f3-49e8-9854-08b9915ae944"
 		},
 		{
 			id: 2,
@@ -24,7 +25,8 @@ module.exports = {
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
-			dataItemName: "Grade 1 Bundle"
+			dataItemName: "Grade 1 Bundle",
+			dataItemFileGUID: "dd75f813-1c5f-43fd-9892-dbc3cf0136b3"
 		},
 		{
 			id: 3,
@@ -37,7 +39,8 @@ module.exports = {
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
-			dataItemName: "Grade 2 Bundle"
+			dataItemName: "Grade 2 Bundle",
+			dataItemFileGUID: "44252091-99ef-40f0-a418-3f1e5745e997"
 		},
 		{
 			id: 4,
@@ -50,7 +53,8 @@ module.exports = {
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
-			dataItemName: "Grade 3 Bundle"
+			dataItemName: "Grade 3 Bundle",
+			dataItemFileGUID: "06842239-3727-404f-ae6e-4afeaaffd907"
 		},
 		{
 			id: 5,
@@ -63,7 +67,8 @@ module.exports = {
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
-			dataItemName: "Grade 4 Bundle"
+			dataItemName: "Grade 4 Bundle",
+			dataItemFileGUID: "cab5a558-7832-4817-95d4-e50c7ba090da"
 		},
 		{
 			id: 6,
@@ -76,7 +81,8 @@ module.exports = {
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
-			dataItemName: "Grade 5 Bundle"
+			dataItemName: "Grade 5 Bundle",
+			dataItemFileGUID: "49d3c252-8db6-4284-94ea-cba3f7abe2a6"
 		},
 		{
 			id: 7,
@@ -89,7 +95,8 @@ module.exports = {
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Logo.svg",
-			dataItemName: "Grade 6 Bundle"
+			dataItemName: "Grade 6 Bundle",
+			dataItemFileGUID: "9640ba04-4d1f-4719-97a9-48fc2c5fc1a9"
 		}
 	]
 };
