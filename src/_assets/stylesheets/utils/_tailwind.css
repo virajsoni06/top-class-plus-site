@@ -46,12 +46,23 @@
 	.hover-trigger:hover .svg {
 		@apply fill-turquoise stroke-turquoise duration-100 ease-in-out;
 	}
+	.hover-target:after {
+		content: " ";
+		position: absolute;
+		left: -3px;
+		top: -6px;
+		border-top: 10px solid transparent;
+		border-right: 10px solid theme("colors.turquoise");
+		border-left: none;
+		border-bottom: 10px solid transparent;
+		transform: rotate(133deg);
+	}
 	.hover-trigger:hover .hover-target {
 		@apply block;
 		left: 35px;
 		top: 10px;
 	}
-	.hover-trigger:hover .tooltip {
+	/* .hover-trigger:hover .tooltip {
 		@apply h-0 w-0 block;
 		border-top: 15px solid theme("colors.transparent");
 		border-bottom: 15px solid theme("colors.transparent");
@@ -59,7 +70,7 @@
 		transform: rotate(133deg);
 		top: 0;
 		left: 32px;
-	}
+	} */
 	@media (max-width: 768px) {
 		.hover-trigger:hover .hover-target {
 			top: 35px;
