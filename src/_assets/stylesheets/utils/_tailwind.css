@@ -53,11 +53,11 @@
 	}
 	.hover-trigger:hover .tooltip {
 		@apply h-0 w-0 block;
-		border-top: 10px solid theme("colors.transparent");
-		border-bottom: 10px solid theme("colors.transparent");
-		border-right: 10px solid theme("colors.turquoise");
-		transform: rotate(130deg);
-		top: 3.2px;
+		border-top: 16px solid theme("colors.transparent");
+		border-bottom: 16px solid theme("colors.transparent");
+		border-right: 16px solid theme("colors.turquoise");
+		transform: rotate(133deg);
+		top: 0;
 		left: 32px;
 	}
 	@media (max-width: 768px) {
