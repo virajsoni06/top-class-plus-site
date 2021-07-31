@@ -46,6 +46,11 @@
 	.hover-trigger:hover .svg {
 		@apply fill-turquoise stroke-turquoise duration-100 ease-in-out;
 	}
+	.hover-trigger:hover .hover-target {
+		@apply block;
+		left: 35px;
+		top: 10px;
+	}
 	.hover-target:after {
 		content: " ";
 		position: absolute;
@@ -57,33 +62,23 @@
 		border-bottom: 10px solid transparent;
 		transform: rotate(133deg);
 	}
-	.hover-trigger:hover .hover-target {
-		@apply block;
-		left: 35px;
-		top: 10px;
-	}
-	/* .hover-trigger:hover .tooltip {
-		@apply h-0 w-0 block;
-		border-top: 15px solid theme("colors.transparent");
-		border-bottom: 15px solid theme("colors.transparent");
-		border-right: 15px solid theme("colors.turquoise");
-		transform: rotate(133deg);
-		top: 0;
-		left: 32px;
-	} */
 	@media (max-width: 768px) {
+		.hover-target:after {
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			left: 166px;
+			top: -4px;
+			border-top: none;
+			border-right: 10px solid transparent;
+			border-left: 10px solid transparent;
+			border-bottom: 10px solid theme("colors.turquoise");
+		}
 		.hover-trigger:hover .hover-target {
 			top: 35px;
 			right: 12px;
 			left: -168px;
-		}
-		.hover-trigger:hover .tooltip {
-			border-top: 10px solid theme("colors.transparent");
-			border-bottom: 10px solid theme("colors.transparent");
-			border-right: 10px solid theme("colors.turquoise");
-			transform: rotate(225deg);
-			top: 27px;
-			left: 3px;
 		}
 	}
 	.check-container {
