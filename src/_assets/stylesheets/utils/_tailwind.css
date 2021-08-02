@@ -52,6 +52,8 @@
 	}
 	.hover-target:after {
 		content: " ";
+		height: 0;
+		width: 0;
 		position: absolute;
 		left: -3px;
 		top: -6px;
@@ -62,22 +64,18 @@
 		transform: rotate(133deg);
 	}
 	@media (max-width: 768px) {
+		.hover-trigger:hover .hover-target {
+			top: 35px;
+			right: 12px;
+			left: -168px;
+		}
 		.hover-target:after {
-			content: " ";
-			height: 0;
-			width: 0;
-			position: absolute;
 			left: 166px;
 			top: -4px;
 			border-top: none;
 			border-right: 10px solid transparent;
 			border-left: 10px solid transparent;
 			border-bottom: 10px solid theme("colors.turquoise");
-		}
-		.hover-trigger:hover .hover-target {
-			top: 35px;
-			right: 12px;
-			left: -168px;
 		}
 	}
 	.check-container {
