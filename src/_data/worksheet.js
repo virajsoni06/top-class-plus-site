@@ -10,7 +10,7 @@ module.exports = {
 			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
-			dataItemImage: "/static/images/Kindergarten-Bundle.jpg",
+			dataItemImage: "/static/images/Kindergarten-Bundle.png",
 			dataItemName: "Kindergarten Bundle",
 			dataItemFileGUID: "63f4465b-b0f3-49e8-9854-08b9915ae944"
 		},
@@ -24,7 +24,7 @@ module.exports = {
 			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
-			dataItemImage: "/static/images/First-Grade-Bundle.jpg",
+			dataItemImage: "/static/images/Grade-1-Bundle.png",
 			dataItemName: "Grade 1 Bundle",
 			dataItemFileGUID: "dd75f813-1c5f-43fd-9892-dbc3cf0136b3"
 		},
@@ -38,7 +38,7 @@ module.exports = {
 			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
-			dataItemImage: "/static/images/Second-Grade-Bundle.jpg",
+			dataItemImage: "/static/images/Grade-2-Bundle.png",
 			dataItemName: "Grade 2 Bundle",
 			dataItemFileGUID: "44252091-99ef-40f0-a418-3f1e5745e997"
 		},
@@ -52,7 +52,7 @@ module.exports = {
 			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
-			dataItemImage: "/static/images/Third-Grade-Bundle.jpg",
+			dataItemImage: "/static/images/Grade-3-Bundle.png",
 			dataItemName: "Grade 3 Bundle",
 			dataItemFileGUID: "06842239-3727-404f-ae6e-4afeaaffd907"
 		},
@@ -66,7 +66,7 @@ module.exports = {
 			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
-			dataItemImage: "/static/images/Fourth-Grade-Bundle.jpg",
+			dataItemImage: "/static/images/Grade-4-Bundle.png",
 			dataItemName: "Grade 4 Bundle",
 			dataItemFileGUID: "cab5a558-7832-4817-95d4-e50c7ba090da"
 		},
@@ -80,7 +80,7 @@ module.exports = {
 			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
-			dataItemImage: "/static/images/Fifth-Grade-Bundle.jpg",
+			dataItemImage: "/static/images/Grade-5-Bundle.png",
 			dataItemName: "Grade 5 Bundle",
 			dataItemFileGUID: "49d3c252-8db6-4284-94ea-cba3f7abe2a6"
 		},
@@ -94,7 +94,7 @@ module.exports = {
 			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
-			dataItemImage: "/static/images/Sixth-Grade-Bundle.png",
+			dataItemImage: "/static/images/Grade-6-Bundle.png",
 			dataItemName: "Grade 6 Bundle",
 			dataItemFileGUID: "9640ba04-4d1f-4719-97a9-48fc2c5fc1a9"
 		}
