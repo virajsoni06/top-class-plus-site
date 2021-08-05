@@ -94,7 +94,7 @@ module.exports = {
 			dataItemPrice: `{"eur": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
-			dataItemImage: "/static/images/Kindergarten-Bundle.jpg",
+			dataItemImage: "/static/images/Sixth-Grade-Bundle.png",
 			dataItemName: "Grade 6 Bundle",
 			dataItemFileGUID: "9640ba04-4d1f-4719-97a9-48fc2c5fc1a9"
 		}
