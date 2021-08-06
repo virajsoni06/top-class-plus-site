@@ -58,7 +58,7 @@ export const updatedCurrencyOnSelect = (country, element, snipcart) => {
 			snipcart.api.session.setCurrency("usd");
 		} else if (country === "Great Britain") {
 			item.innerHTML = "£";
-			snipcart.api.session.setCurrency("eur");
+			snipcart.api.session.setCurrency("gbp");
 		} else if (country === "India") {
 			item.innerHTML = "₹";
 			snipcart.api.session.setCurrency("inr");
@@ -71,19 +71,19 @@ export const updatedCurrencyOnSelect = (country, element, snipcart) => {
 const updateWorksheetPrices = country => {
 	const itemPrice = document.querySelectorAll(".worksheet-item .item-price");
 	let priceList = [
-		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
-		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
-		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
-		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
-		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
-		{ eur: "72.00", usd: "99.00", inr: "7370.30" },
-		{ eur: "72.00", usd: "99.00", inr: "7370.30" }
+		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
+		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
+		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
+		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
+		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
+		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
+		{ gbp: "72.00", usd: "99.00", inr: "7370.30" }
 	];
 	itemPrice?.forEach(function(item, index) {
 		if (country === "United States") {
 			item.innerHTML = "$" + priceList[index].usd;
 		} else if (country === "Great Britain") {
-			item.innerHTML = "£" + priceList[index].eur;
+			item.innerHTML = "£" + priceList[index].gbp;
 		} else if (country === "India") {
 			item.innerHTML = "₹" + priceList[index].inr;
 		}
@@ -99,11 +99,11 @@ const updateMonthlyAndOneTimePrice = country => {
 			monthly: 3,
 			oneTime: 36
 		},
-		eur: {
+		gbp: {
 			monthly: 2.18,
 			oneTime: 26.2
 		},
-		ind: {
+		inr: {
 			monthly: 223.32,
 			oneTime: 2679.9
 		}
@@ -115,11 +115,11 @@ const updateMonthlyAndOneTimePrice = country => {
 		monthlyPrice = prices.usd.monthly;
 		lifeTimePrice = prices.usd.oneTime;
 	} else if (country === "Great Britain") {
-		monthlyPrice = prices.eur.monthly;
-		lifeTimePrice = prices.eur.oneTime;
+		monthlyPrice = prices.gbp.monthly;
+		lifeTimePrice = prices.gbp.oneTime;
 	} else if (country === "India") {
-		monthlyPrice = prices.ind.monthly;
-		lifeTimePrice = prices.ind.oneTime;
+		monthlyPrice = prices.inr.monthly;
+		lifeTimePrice = prices.inr.oneTime;
 	}
 
 	oneTimePrice?.forEach(function(item) {

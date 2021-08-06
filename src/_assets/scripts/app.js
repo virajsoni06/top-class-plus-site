@@ -170,6 +170,7 @@ subscribeNewsletterForm?.addEventListener("submit", function(e) {
 // SNIPCART
 /////////////////////
 document.addEventListener("snipcart.ready", () => {
+	console.log("jinglis ready");
 	// select worksheet item
 	worksheetItem?.forEach(function(item) {
 		item.addEventListener("click", function() {
