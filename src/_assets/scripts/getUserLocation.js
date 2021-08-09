@@ -7,6 +7,7 @@ const getUserLocation = async () => {
 		return err;
 	}
 };
+
 export default getUserLocation;
 
 export const updateCurrencySymbolOnLoad = (element, location) => {
@@ -75,13 +76,14 @@ export const updatedCurrencyOnSelect = (country, element, snipcart) => {
 
 const displayCountryBasedWorksheets = country => {
 	const worksheets = document.querySelectorAll(".worksheet-item");
+	const checkbox = document.querySelectorAll(".check-container");
 
 	worksheets?.forEach(function(item) {
 		if (country === "United States") {
 			if (item?.classList.contains("in") || item?.classList.contains("gb")) {
 				item.classList.add("hidden");
 				if (item?.classList.contains("selected")) {
-					item.classList.remove("selected");
+					removeWorksheetSelectedState(item, checkbox);
 				}
 			} else {
 				if (item.classList.contains("hidden")) {
@@ -92,7 +94,7 @@ const displayCountryBasedWorksheets = country => {
 			if (item?.classList.contains("in") || item?.classList.contains("us")) {
 				item.classList.add("hidden");
 				if (item?.classList.contains("selected")) {
-					item.classList.remove("selected");
+					removeWorksheetSelectedState(item, checkbox);
 				}
 			} else {
 				if (item.classList.contains("hidden")) {
@@ -103,7 +105,7 @@ const displayCountryBasedWorksheets = country => {
 			if (item?.classList.contains("us") || item?.classList.contains("gb")) {
 				item.classList.add("hidden");
 				if (item?.classList.contains("selected")) {
-					item.classList.remove("selected");
+					removeWorksheetSelectedState(item, checkbox);
 				}
 			} else {
 				if (item.classList.contains("hidden")) {
@@ -165,4 +167,22 @@ const updateMonthlyAndOneTimePrice = country => {
 		item.innerHTML = lifeTimePrice;
 	});
 	pricePerMonth.innerHTML = monthlyPrice;
+};
+
+export const addWorksheetSelectedState = (item, checkbox) => {
+	item.classList.add("selected");
+	checkbox?.forEach(function(check) {
+		if (item?.contains(check)) {
+			check.classList.add("checked");
+		}
+	});
+};
+
+export const removeWorksheetSelectedState = (item, checkbox) => {
+	item.classList.remove("selected");
+	checkbox?.forEach(function(check) {
+		if (item?.contains(check)) {
+			check.classList.remove("checked");
+		}
+	});
 };

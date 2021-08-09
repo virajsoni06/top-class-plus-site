@@ -1,8 +1,9 @@
 import getUserLocation, {
 	updateCurrencySymbolOnLoad,
-	updatedCurrencyOnSelect
+	updatedCurrencyOnSelect,
+	addWorksheetSelectedState,
+	removeWorksheetSelectedState
 } from "./getUserLocation";
-import { isTSEnumMember } from "babel-types";
 
 const purchaseWorksheetSection = document.getElementById("purchase-worksheets");
 
@@ -175,21 +176,9 @@ document.addEventListener("snipcart.ready", () => {
 	worksheetItem?.forEach(function(item) {
 		item.addEventListener("click", function() {
 			if (!item?.classList.contains("selected")) {
-				item.classList.add("selected");
-				// item.classList.add("snipcart-add-item");
-				checkbox?.forEach(function(check) {
-					if (item?.contains(check)) {
-						check.classList.add("checked");
-					}
-				});
+				addWorksheetSelectedState(item, checkbox);
 			} else {
-				item.classList.remove("selected");
-				// item.classList.remove("snipcart-add-item");
-				checkbox?.forEach(function(check) {
-					if (item?.contains(check)) {
-						check.classList.remove("checked");
-					}
-				});
+				removeWorksheetSelectedState(item, checkbox);
 			}
 		});
 	});
