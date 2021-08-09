@@ -8,6 +8,10 @@ module.exports = {
 			name: "Kindergarden Worksheet Bundle",
 			price: "99.00",
 			ageGroup: "Age 5-6 years old",
+			// specifying property 'countryCode' is important
+			// 'us' for USA worksheets
+			// 'gb' for Great Britain worksheets
+			// 'in' for Indian worksheets
 			countryCode: "us",
 
 			dataItemID: "Kindergarten-us",
@@ -322,8 +326,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-6-Bundle.png",
 			dataItemName: "Grade 6 Bundle",
-			// dataItemFileGUID: "eddd3627-7488-4767-bd4e-30c9b9290b05"
-			dataItemFileGUID: "bbba2550-3c52-4614-8e22-4cafba4ea682"
+			dataItemFileGUID: "eddd3627-7488-4767-bd4e-30c9b9290b05"
 		}
 	]
 };
