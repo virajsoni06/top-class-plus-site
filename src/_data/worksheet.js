@@ -10,7 +10,7 @@ module.exports = {
 			ageGroup: "Age 5-6 years old",
 			countryCode: "us",
 
-			dataItemID: "Kindergarten",
+			dataItemID: "Kindergarten-us",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -25,7 +25,7 @@ module.exports = {
 			ageGroup: "Age 6-7 years old",
 			countryCode: "us",
 
-			dataItemID: "grade-1",
+			dataItemID: "grade-1-us",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -40,7 +40,7 @@ module.exports = {
 			ageGroup: "Age 7-8 years old",
 			countryCode: "us",
 
-			dataItemID: "grade-2",
+			dataItemID: "grade-2-us",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -55,7 +55,7 @@ module.exports = {
 			ageGroup: "Age 8-9 years old",
 			countryCode: "us",
 
-			dataItemID: "grade-3",
+			dataItemID: "grade-3-us",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -70,7 +70,7 @@ module.exports = {
 			ageGroup: "Age 9-10 years old",
 			countryCode: "us",
 
-			dataItemID: "grade-4",
+			dataItemID: "grade-4-us",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -85,7 +85,7 @@ module.exports = {
 			ageGroup: "Age 10-11 years old",
 			countryCode: "us",
 
-			dataItemID: "grade-5",
+			dataItemID: "grade-5-us",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -100,7 +100,7 @@ module.exports = {
 			ageGroup: "Age 11-12 years old",
 			countryCode: "us",
 
-			dataItemID: "grade-6",
+			dataItemID: "grade-6-us",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -118,7 +118,7 @@ module.exports = {
 			ageGroup: "Age 5-6 years old",
 			countryCode: "gb",
 
-			dataItemID: "Kindergarten",
+			dataItemID: "Kindergarten-in",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -133,7 +133,7 @@ module.exports = {
 			ageGroup: "Age 6-7 years old",
 			countryCode: "gb",
 
-			dataItemID: "grade-1",
+			dataItemID: "grade-1-in",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -148,7 +148,7 @@ module.exports = {
 			ageGroup: "Age 7-8 years old",
 			countryCode: "gb",
 
-			dataItemID: "grade-2",
+			dataItemID: "grade-2-in",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -163,7 +163,7 @@ module.exports = {
 			ageGroup: "Age 8-9 years old",
 			countryCode: "gb",
 
-			dataItemID: "grade-3",
+			dataItemID: "grade-3-in",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -178,7 +178,7 @@ module.exports = {
 			ageGroup: "Age 9-10 years old",
 			countryCode: "gb",
 
-			dataItemID: "grade-4",
+			dataItemID: "grade-4-in",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -193,7 +193,7 @@ module.exports = {
 			ageGroup: "Age 10-11 years old",
 			countryCode: "gb",
 
-			dataItemID: "grade-5",
+			dataItemID: "grade-5-in",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -208,7 +208,7 @@ module.exports = {
 			ageGroup: "Age 11-12 years old",
 			countryCode: "gb",
 
-			dataItemID: "grade-6",
+			dataItemID: "grade-6-in",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -226,7 +226,7 @@ module.exports = {
 			ageGroup: "Age 5-6 years old",
 			countryCode: "in",
 
-			dataItemID: "Kindergarten",
+			dataItemID: "Kindergarten-gb",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -241,7 +241,7 @@ module.exports = {
 			ageGroup: "Age 6-7 years old",
 			countryCode: "in",
 
-			dataItemID: "grade-1",
+			dataItemID: "grade-1-gb",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -256,7 +256,7 @@ module.exports = {
 			ageGroup: "Age 7-8 years old",
 			countryCode: "in",
 
-			dataItemID: "grade-2",
+			dataItemID: "grade-2-gb",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -271,7 +271,7 @@ module.exports = {
 			ageGroup: "Age 8-9 years old",
 			countryCode: "in",
 
-			dataItemID: "grade-3",
+			dataItemID: "grade-3-gb",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -286,7 +286,7 @@ module.exports = {
 			ageGroup: "Age 9-10 years old",
 			countryCode: "in",
 
-			dataItemID: "grade-4",
+			dataItemID: "grade-4-gb",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -301,7 +301,7 @@ module.exports = {
 			ageGroup: "Age 10-11 years old",
 			countryCode: "in",
 
-			dataItemID: "grade-5",
+			dataItemID: "grade-5-gb",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
@@ -316,7 +316,7 @@ module.exports = {
 			ageGroup: "Age 11-12 years old",
 			countryCode: "in",
 
-			dataItemID: "grade-6",
+			dataItemID: "grade-6-gb",
 			dataItemPrice: `{"gbp": 72.00, "usd": 99.00 , "inr": 7370.30}`,
 			dataItemURL: "/",
 			dataItemDescription: "Age 11-12 years old",
