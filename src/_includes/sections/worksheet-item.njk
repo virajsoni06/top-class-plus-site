@@ -5,11 +5,11 @@
 	data-item-description= "{{ item.dataItemDescription }}"
 	data-item-image= "{{ item.dataItemImage }}"
 	data-item-name= "{{ item.dataItemName }}"
-	data-item-file-guid= "{{ item.dataItemFileGUID }}"
 	data-item-max-quantity= "1"
 	data-item-min-quantity= "1"
+	data-item-file-guid= "{{ item.dataItemFileGUID }}"
 
-	class="worksheet-item flex items-center justify-between bg-white rounded-small border-tiny border-black px-2 py-2 mb-2 cursor-pointer hover:border-turquoise transition-all duration-100">
+	class="worksheet-item {{ item.countryCode }} flex items-center justify-between bg-white rounded-small border-tiny border-black px-2 py-2 mb-2 cursor-pointer hover:border-turquoise transition-all duration-100">
 	<div class="flex items-center">
 		<div class="check-container mr-3">
 			<div class="checkmark"></div>
@@ -48,10 +48,11 @@
 		data-item-description= "{{ item.dataItemDescription }}"
 		data-item-image= "{{ item.dataItemImage }}"
 		data-item-name= "{{ item.dataItemName }}"
-		data-item-file-guid=" {{ item.dataItemFileGUID }}"
 		data-item-max-quantity= "1"
 		data-item-min-quantity= "1"
-		class="hidden snipcart-add-item"
+		data-item-file-guid= "{{ item.dataItemFileGUID }}"
+
+		class="hidden snipcart-add-item jaba"
 	></div>
 
 </div>

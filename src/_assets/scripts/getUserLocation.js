@@ -17,6 +17,7 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 				item.innerHTML = "₹";
 			});
 			updateCountryNameAndFlag(country, "in-flag.svg");
+			displayCountryBasedWorksheets(country);
 			updateWorksheetPrices(country);
 			updateMonthlyAndOneTimePrice(country);
 		} else if (country === "United States") {
@@ -24,6 +25,7 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 				item.innerHTML = "$";
 			});
 			updateCountryNameAndFlag(country, "us-flag.svg");
+			displayCountryBasedWorksheets(country);
 			updateWorksheetPrices(country);
 			updateMonthlyAndOneTimePrice(country);
 		} else {
@@ -31,6 +33,7 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 				item.innerHTML = "£";
 			});
 			updateCountryNameAndFlag("Great Britain", "gb-flag.svg");
+			displayCountryBasedWorksheets("Great Britain");
 			updateWorksheetPrices("Great Britain");
 			updateMonthlyAndOneTimePrice("Great Britain");
 		}
@@ -39,6 +42,7 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 			item.innerHTML = "£";
 		});
 		updateCountryNameAndFlag("Great Britain", "gb-flag.svg");
+		displayCountryBasedWorksheets("Great Britain");
 		updateWorksheetPrices("Great Britain");
 		updateMonthlyAndOneTimePrice("Great Britain");
 	}
@@ -64,28 +68,63 @@ export const updatedCurrencyOnSelect = (country, element, snipcart) => {
 			snipcart.api.session.setCurrency("inr");
 		}
 	});
+	displayCountryBasedWorksheets(country);
 	updateWorksheetPrices(country);
 	updateMonthlyAndOneTimePrice(country);
 };
 
+const displayCountryBasedWorksheets = country => {
+	const worksheets = document.querySelectorAll(".worksheet-item");
+
+	worksheets?.forEach(function(item) {
+		if (country === "United States") {
+			if (item?.classList.contains("in") || item?.classList.contains("gb")) {
+				item.classList.add("hidden");
+				if (item?.classList.contains("selected")) {
+					item.classList.remove("selected");
+				}
+			} else {
+				if (item.classList.contains("hidden")) {
+					item.classList.remove("hidden");
+				}
+			}
+		} else if (country === "Great Britain") {
+			if (item?.classList.contains("in") || item?.classList.contains("us")) {
+				item.classList.add("hidden");
+				if (item?.classList.contains("selected")) {
+					item.classList.remove("selected");
+				}
+			} else {
+				if (item.classList.contains("hidden")) {
+					item.classList.remove("hidden");
+				}
+			}
+		} else if (country === "India") {
+			if (item?.classList.contains("us") || item?.classList.contains("gb")) {
+				item.classList.add("hidden");
+				if (item?.classList.contains("selected")) {
+					item.classList.remove("selected");
+				}
+			} else {
+				if (item.classList.contains("hidden")) {
+					item.classList.remove("hidden");
+				}
+			}
+		}
+	});
+};
+
 const updateWorksheetPrices = country => {
 	const itemPrice = document.querySelectorAll(".worksheet-item .item-price");
-	let priceList = [
-		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
-		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
-		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
-		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
-		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
-		{ gbp: "72.00", usd: "99.00", inr: "7370.30" },
-		{ gbp: "72.00", usd: "99.00", inr: "7370.30" }
-	];
-	itemPrice?.forEach(function(item, index) {
+	let priceList = { gbp: "72.00", usd: "99.00", inr: "7370.30" };
+
+	itemPrice?.forEach(function(item) {
 		if (country === "United States") {
-			item.innerHTML = "$" + priceList[index].usd;
+			item.innerHTML = "$" + priceList.usd;
 		} else if (country === "Great Britain") {
-			item.innerHTML = "£" + priceList[index].gbp;
+			item.innerHTML = "£" + priceList.gbp;
 		} else if (country === "India") {
-			item.innerHTML = "₹" + priceList[index].inr;
+			item.innerHTML = "₹" + priceList.inr;
 		}
 	});
 };

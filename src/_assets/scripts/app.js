@@ -2,6 +2,7 @@ import getUserLocation, {
 	updateCurrencySymbolOnLoad,
 	updatedCurrencyOnSelect
 } from "./getUserLocation";
+import { isTSEnumMember } from "babel-types";
 
 const purchaseWorksheetSection = document.getElementById("purchase-worksheets");
 
