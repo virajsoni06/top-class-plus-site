@@ -128,7 +128,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Kindergarten-Bundle.png",
 			dataItemName: "Kindergarten Bundle",
-			dataItemFileGUID: "63f4465b-b0f3-49e8-9854-08b9915ae944"
+			dataItemFileGUID: "57baa851-21ea-4817-8091-df262c96ba38"
 		},
 		{
 			id: 9,
@@ -143,7 +143,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-1-Bundle.png",
 			dataItemName: "Grade 1 Bundle",
-			dataItemFileGUID: "2e8c4cea-d09e-44e6-b075-fbc3a3a943a2"
+			dataItemFileGUID: "66d2f290-1567-45a8-9943-a05f59d67e3e"
 		},
 		{
 			id: 10,
@@ -158,7 +158,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-2-Bundle.png",
 			dataItemName: "Grade 2 Bundle",
-			dataItemFileGUID: "354b47b4-9d7f-4932-b358-b2609e079b1b"
+			dataItemFileGUID: "c99dcbf7-51f5-4ea8-ae22-c53b73e45a01"
 		},
 		{
 			id: 11,
@@ -173,7 +173,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-3-Bundle.png",
 			dataItemName: "Grade 3 Bundle",
-			dataItemFileGUID: "f9dc7c7e-eced-48dd-a343-975de04909d2"
+			dataItemFileGUID: "6f824fce-c1e8-4fd5-afd2-946c0fc06eee"
 		},
 		{
 			id: 12,
@@ -188,7 +188,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-4-Bundle.png",
 			dataItemName: "Grade 4 Bundle",
-			dataItemFileGUID: "cb28dbbc-7ade-4e44-83ba-5e57dd9c239b"
+			dataItemFileGUID: "2d647ba2-e75e-4ea5-8802-b63091df68ad"
 		},
 		{
 			id: 13,
@@ -203,7 +203,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-5-Bundle.png",
 			dataItemName: "Grade 5 Bundle",
-			dataItemFileGUID: "72adc132-af45-43aa-93a8-819b4b2b6a6c"
+			dataItemFileGUID: "82e2f729-fc3c-4222-b485-812711ce2043"
 		},
 		{
 			id: 14,
@@ -218,7 +218,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-6-Bundle.png",
 			dataItemName: "Grade 6 Bundle",
-			dataItemFileGUID: "e4ad046a-3e19-42f7-94a6-4cb3fcdbe50d"
+			dataItemFileGUID: "5e6df889-964f-4270-86b9-020c075a235e"
 		},
 		//
 		// Indian worksheets
@@ -236,7 +236,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Kindergarten-Bundle.png",
 			dataItemName: "Kindergarten Bundle",
-			dataItemFileGUID: "63f4465b-b0f3-49e8-9854-08b9915ae944"
+			dataItemFileGUID: "67f87e92-7575-4be6-b3d5-b4887b30e60a"
 		},
 		{
 			id: 16,
@@ -251,7 +251,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-1-Bundle.png",
 			dataItemName: "Grade 1 Bundle",
-			dataItemFileGUID: "bbe76759-1fac-49c0-925c-150253498c59"
+			dataItemFileGUID: "5d028f56-e6a7-4d45-b63c-c73298442634"
 		},
 		{
 			id: 17,
@@ -266,7 +266,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-2-Bundle.png",
 			dataItemName: "Grade 2 Bundle",
-			dataItemFileGUID: "59f964fc-438a-4e3c-a408-99bf9d7bdd03"
+			dataItemFileGUID: "51b9d004-fcbe-472d-a774-f8a29cc5d0b8"
 		},
 		{
 			id: 18,
@@ -281,7 +281,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-3-Bundle.png",
 			dataItemName: "Grade 3 Bundle",
-			dataItemFileGUID: "7f2e42ec-1932-46bf-a0ce-16d4e34aea2e"
+			dataItemFileGUID: "6e6a54d9-aa5a-4d09-8275-3488b6fbc562"
 		},
 		{
 			id: 19,
@@ -296,7 +296,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-4-Bundle.png",
 			dataItemName: "Grade 4 Bundle",
-			dataItemFileGUID: "e44591d5-ace3-4dec-bbf4-438c31be3ff7"
+			dataItemFileGUID: "	faa03b58-7109-4897-9ff8-d5b13502109e"
 		},
 		{
 			id: 20,
@@ -311,7 +311,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-5-Bundle.png",
 			dataItemName: "Grade 5 Bundle",
-			dataItemFileGUID: "d52a2272-5ed1-4f76-ad5c-64745725622a"
+			dataItemFileGUID: "0ffe194c-662d-4bf6-8d97-91ef56d4df68"
 		},
 		{
 			id: 21,
@@ -326,7 +326,7 @@ module.exports = {
 			dataItemDescription: "Age 11-12 years old",
 			dataItemImage: "/static/images/Grade-6-Bundle.png",
 			dataItemName: "Grade 6 Bundle",
-			dataItemFileGUID: "eddd3627-7488-4767-bd4e-30c9b9290b05"
+			dataItemFileGUID: "1f6badf6-ed6a-4de1-9bdc-10a3b704426a"
 		}
 	]
 };
