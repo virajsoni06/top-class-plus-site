@@ -21,15 +21,7 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 			displayCountryBasedWorksheets(country);
 			updateWorksheetPrices(country);
 			updateMonthlyAndOneTimePrice(country);
-		} else if (country === "United States") {
-			element.forEach(function(item) {
-				item.innerHTML = "$";
-			});
-			updateCountryNameAndFlag(country, "us-flag.svg");
-			displayCountryBasedWorksheets(country);
-			updateWorksheetPrices(country);
-			updateMonthlyAndOneTimePrice(country);
-		} else {
+		} else if (country === "United Kingdom") {
 			element.forEach(function(item) {
 				item.innerHTML = "£";
 			});
@@ -37,15 +29,23 @@ export const updateCurrencySymbolOnLoad = (element, location) => {
 			displayCountryBasedWorksheets("Great Britain");
 			updateWorksheetPrices("Great Britain");
 			updateMonthlyAndOneTimePrice("Great Britain");
+		} else {
+			element.forEach(function(item) {
+				item.innerHTML = "$";
+			});
+			updateCountryNameAndFlag("United States", "us-flag.svg");
+			displayCountryBasedWorksheets("United States");
+			updateWorksheetPrices("United States");
+			updateMonthlyAndOneTimePrice("United States");
 		}
 	} else {
 		element.forEach(function(item) {
-			item.innerHTML = "£";
+			item.innerHTML = "$";
 		});
-		updateCountryNameAndFlag("Great Britain", "gb-flag.svg");
-		displayCountryBasedWorksheets("Great Britain");
-		updateWorksheetPrices("Great Britain");
-		updateMonthlyAndOneTimePrice("Great Britain");
+		updateCountryNameAndFlag("United States", "us-flag.svg");
+		displayCountryBasedWorksheets("United States");
+		updateWorksheetPrices("United States");
+		updateMonthlyAndOneTimePrice("United States");
 	}
 };
 
