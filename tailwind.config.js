@@ -18,21 +18,38 @@ module.exports = {
 				info: "180px"
 			},
 			fontSize: {
-				"ty-h1": "58px",
-				"ty-h2": "45px",
-				"ty-h4": "28px",
-				"ty-h5": "22px",
-				"ty-h6": "18px",
-				"ty-p": "18px",
-				"ty-ps": "14px"
+				alpha: "58px",
+				beta: "45px",
+				gamma: "28px",
+				delta: "22px",
+				epsilon: "18px",
+				eta: "16px",
+				theta: "40px",
+				zeta: "14px"
 			},
 			borderRadius: {
 				small: "5px",
 				large: "10px"
+			},
+			spacing: {
+				"72": "24rem",
+				"84": "27rem",
+				"96": "30rem"
 			}
 		},
+		fill: theme => ({
+			black: theme("colors.black"),
+			turquoise: theme("colors.turquoise")
+		}),
+		stroke: theme => ({
+			black: theme("colors.black"),
+			turquoise: theme("colors.turquoise")
+		}),
 		maxWidth: {
+			large: "1200px",
 			wrap: "1110px",
+			half: "550px",
+			img: "500px",
 			features: "925px",
 			featureCard: "255px"
 		},
@@ -43,6 +60,10 @@ module.exports = {
 			"d-vp": "768px",
 			"e-vp": "992px",
 			"f-vp": "1200px"
+		},
+		minWidth: {
+			half: "550px",
+			img: "500px"
 		},
 		borderWidth: {
 			tiny: "0.15px",

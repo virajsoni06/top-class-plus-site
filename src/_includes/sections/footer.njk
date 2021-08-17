@@ -1,14 +1,20 @@
 <div>
 
-    <div class="flex justify-between items-center py-3 a-vp:px-3 a-vp:flex-col c-vp:flex-row e-vp:px-0">
-        <p class="text-ty-ps font-sourceSans font-semibold">© 2020 ALL RIGHTS RESERVED | Top Class Plus</p>
-        <div class="flex a-vp:mt-1 c-vp:mt-0">
-            {% for item in card.cards %}
+	<div class="flex justify-between items-center py-3 a-vp:px-3 a-vp:flex-col a-vp:text-center c-vp:flex-row">
+		<p class="text-zeta font-sourceSans font-semibold">
+            © <span class="current-year">{{ currentYear }}</span>
+             ALL RIGHTS RESERVED | 
+             Top Class Plus | 
+             <a class="hover:text-gray-700" href="/privacy">Privacy</a> | 
+             <a class="hover:text-gray-700" href="/terms">Terms</a>
+		</p>
+		<div class="flex a-vp:mt-1 c-vp:mt-0">
+			{% for item in card.cards %}
 
-                <img src={{ item.source }} alt={{ item.alt }} width="40px" class="ml-2"/>
+				<img src={{ item.source }} alt={{ item.alt }} width="40px" class="ml-2"/>
 
-            {% endfor %}
-        </div>
-    </div>
+			{% endfor %}
+		</div>
+	</div>
 
 </div>

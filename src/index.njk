@@ -1,69 +1,52 @@
 ---
 layout: base.njk
-title: Minimal boilerplate for new projects built with Eleventy, Tailwind and PostCSS
+title: Top Class Plus
 ---
 
 <main id="main">
 
 	<div class="bg-skyBlue pt-6 pb-20">
 
-		{# app wrapper #}
 		<div class="max-w-wrap mx-auto">
 
-			{# top nav #}
 			{% include "sections/top-nav.njk" %}
-			{# top nav #}
 
-			{# banner section #}
 			{% include "sections/banner.njk" %}
-			{# banner section #}
 
-			{# features section #}
 			{% include "sections/features.njk" %}
-			{# features section #}
 
-			{# get worksheets section #}
 			{% include "sections/get-worksheets.njk" %}
-			{# get worksheets section #}
 
 		</div>
-		{# app wrapper #}
 
 	</div>
 
 	<div class="bg-white pt-24 pb-20">
 
-		{# app wrapper #}
-		<div class="max-w-wrap mx-auto">
+		<div class="max-w-large mx-auto px-3">
 
-			{# purchase worksheet section #}
 			{% include "sections/purchase-worksheet.njk" %}
-			{# purchase worksheet section #}
-
-			{# subscribe section #}
-			{% include "sections/subscribe.njk" %}
-			{# subscribe section #}
 
 		</div>
-		{# app wrapper #}
+
+		<div class="max-w-wrap mx-auto">
+
+			{% include "sections/subscribe.njk" %}
+
+		</div>
 
 	</div>
 
 	<div class="bg-skyBlue">
 
-		{# app wrapper #}
 		<div class="max-w-wrap mx-auto">
 
-			{# footer section #}
 			{% include "sections/footer.njk" %}
-			{# footer section #}
 
 		</div>
-		{# app wrapper #}
 
 	</div>
 
-	{# modals #}
 	<div class="sample-modal modal">
 		{% include "modal/sample-modal.njk" %}
 	</div>
@@ -79,6 +62,5 @@ title: Minimal boilerplate for new projects built with Eleventy, Tailwind and Po
 	<div class="purchase-modal modal">
 		{% include "modal/purchase-modal.njk" %}
 	</div>
-	{# modals #}
 
 </main>
